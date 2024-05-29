@@ -10,7 +10,7 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '3rem'
+        DEFAULT: "3rem"
       },
     },
     extend: {
