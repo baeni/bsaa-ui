@@ -14,7 +14,7 @@ export default function Test() {
 
     return (
         <div id="headerImageContainer" className="w-full h-[100vh] absolute top-0 left-0 z-[-1] scale-110 opacity-0">
-            <Image className="w-full h-full object-cover pointer-events-none select-none" src={BackgroundImage.src} alt="Background"/>
+            <Image className="w-full h-full object-cover pointer-events-none select-none" src={BackgroundImage.src} alt="Background" width="1500" height="843" unoptimized />
         </div>
     );
 }
