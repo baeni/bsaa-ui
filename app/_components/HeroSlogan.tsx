@@ -21,7 +21,7 @@ export default function HeroSlogan() {
     
     return (
         <div>
-            <h1 id="slogan" className="text-8xl text-white font-bold leading-relaxed">Hi, it's Benny.</h1>
+            <h1 id="slogan" className="text-8xl text-white font-bold leading-relaxed">Hi, it&apos;s Benny.</h1>
             <p id="sloganSub" className="text-lg text-neutral-300 leading-relaxed">
                 <span>I try to build wonderful things as a developer with a little big fetish for design.</span>
                 <span>Feel free to scroll my site to learn more about me and my recent work.</span>
