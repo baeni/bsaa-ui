@@ -24,7 +24,7 @@ export default function Test() {
             </div>
 
             <div className="text-right">
-                <p>It's currently {currentTime.format("HH:mm:ss")} for me.</p>
+                <p>It&apos;s currently {currentTime.format("HH:mm:ss")} for me.</p>
                 <p>&copy; {dayjs().year()}</p>
             </div>
         </footer>
