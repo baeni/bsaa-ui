@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "dayjs": "^1.11.11",
     "gsap": "^3.12.5",
     "lenis": "^1.0.45",
     "next": "14.2.3",
