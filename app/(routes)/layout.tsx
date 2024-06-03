@@ -4,6 +4,7 @@ import "@/app/_assets/globals.css";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import SmoothScrolling from "@/app/_components/SmoothScrolling";
+import Navbar from "@/app/_components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          <Navbar />
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );
