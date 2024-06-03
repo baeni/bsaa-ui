@@ -1,18 +1,23 @@
-import Navbar from "../_components/Navbar";
 import HeroImage from "../_components/HeroImage";
-import HeroSlogan from "@/app/_components/HeroSlogan";
+import HeroSlogan from "../_components/HeroSlogan";
+import Footer from "../_components/Footer";
+import Additional from "../_components/Additional";
 
 export default function Home() {
     return (
-        <main className="h-[500vh]">
-            <Navbar />
-
+        <main className="min-h-screen">
             {/* Hero */}
-            <section className="container h-[calc(100vh-21.25rem)] flex items-center">
+            <section className="container h-screen flex flex-col items-center justify-center">
                 <HeroImage />
 
                 <HeroSlogan />
             </section>
+            
+            <section className="container">
+                <Additional />
+            </section>
+            
+            <Footer />
         </main>
     );
 }

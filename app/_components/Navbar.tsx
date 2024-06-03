@@ -1,19 +1,19 @@
 "use client";
 
 import {gsap} from "gsap";
-import {useEffect} from "react";
+import {useGSAP} from "@gsap/react";
 
 export default function Test() {
-    useEffect(() => {
+    useGSAP(() => {
         gsap.fromTo("#navbar",
             { opacity: "0", y: "25" },
             { opacity: "1", y: "0" })
             .delay(1)
             .duration(3);
-    }, []);
+    });
 
     return (
-        <div id="navbar" className="flex h-40 w-full sticky top-0 z-50 opacity-0">
+        <nav id="navbar" className="flex h-40 w-full fixed top-0 z-50 opacity-0">
             <div className="inline-flex justify-center md:justify-between items-center container">
                 <a className="text-2xl uppercase font-bold text-white" href="/">B.Saa</a>
 
@@ -22,6 +22,6 @@ export default function Test() {
                     <li className="cursor-pointer">Get in Touch</li>
                 </ul>
             </div>
-        </div>
+        </nav>
     );
 }
