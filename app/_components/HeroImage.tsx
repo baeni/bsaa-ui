@@ -11,10 +11,10 @@ export default function Test() {
         gsap.registerPlugin(ScrollTrigger);
         
         gsap.from("#heroImageContainer",
-            { scale: 1.1, opacity: 0 });
+            { scale: 1.1, opacity: 0, padding: 0 });
 
         gsap.to("#heroImageContainer",
-            { scale: 1, opacity: 1 })
+            { scale: 1, opacity: 1, padding: "0.75rem" })
             .duration(1.5);
 
         ScrollTrigger.create({
