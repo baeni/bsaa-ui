@@ -26,10 +26,10 @@ export default function Test() {
             pinSpacing: false,
             anticipatePin: 1,
             onLeave: () => {
-                gsap.to("#heroImage", { padding: "0.75rem", duration: 1 });
+                gsap.to("#heroImage", { padding: "0", duration: 0.175 });
             },
             onEnterBack: () => {
-                gsap.to("#heroImage", { padding: "0", duration: 1 });
+                gsap.to("#heroImage", { padding: "0.75rem", duration: 0.175 });
             }
         });
     })
