@@ -7,10 +7,12 @@ export default function Home() {
     return (
         <main className="min-h-screen">
             {/* Hero */}
-            <section className="container h-screen flex flex-col items-center justify-center">
+            <section>
                 <HeroImage />
 
-                <HeroSlogan />
+                <div className="container h-screen relative flex flex-col items-center justify-center">
+                    <HeroSlogan />
+                </div>
             </section>
             
             <section className="container">

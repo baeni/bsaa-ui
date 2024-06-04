@@ -2,13 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/_assets/globals.css";
 import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
 import SmoothScrolling from "@/app/_components/SmoothScrolling";
 import Navbar from "@/app/_components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
-
-gsap.registerPlugin(ScrollTrigger);
 
 gsap.defaults({
   ease: "power3.inOut"

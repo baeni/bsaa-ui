@@ -9,7 +9,7 @@ interface SmoothScrollingProps {
 
 export default function SmoothScrolling({ children }: SmoothScrollingProps) {
   return (
-    <ReactLenis root options={{ lerp: 0.125, duration: .5 }}>
+    <ReactLenis root options={{ lerp: .1 }}>
       {children}
     </ReactLenis>
   );
