@@ -14,22 +14,19 @@ export default function Test() {
             { scale: 1.1, opacity: 0, padding: 0 });
 
         gsap.to("#heroImageContainer",
-            { scale: 1, opacity: 1, padding: "0.75rem" })
+            { scale: 1, opacity: 1 })
             .duration(1.5);
 
         ScrollTrigger.create({
             trigger: "#heroImageContainer",
             start: "top top",
-            end: "top bottom",
-            endTrigger: "footer",
+            end: "+=25%",
             pin: true,
-            pinSpacing: false,
-            anticipatePin: 1,
             onLeave: () => {
-                gsap.to("#heroImage", { padding: "0", duration: 0.175 });
+                gsap.to("#heroImage", { padding: "0.75rem", duration: 0.175 });
             },
             onEnterBack: () => {
-                gsap.to("#heroImage", { padding: "0.75rem", duration: 0.175 });
+                gsap.to("#heroImage", { padding: "0rem", duration: 0.175 });
             }
         });
     })
