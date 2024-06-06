@@ -7,15 +7,13 @@ export default function Home() {
     return (
         <main className="min-h-screen">
             {/* Hero */}
-            <section>
+            <section className="container h-screen flex items-center">
                 <HeroImage />
-
-                <div className="container h-screen relative flex flex-col items-center justify-center">
-                    <HeroSlogan />
-                </div>
+                <HeroSlogan />
             </section>
             
-            <section className="container">
+            <section className="container mt-[25vh] py-20">
+                <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
                 <Additional />
             </section>
             
