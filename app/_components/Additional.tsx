@@ -5,38 +5,51 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 export default function Additional() {
-    const samplePosts = [
-        {
-            title: "Lorem ipsum dolor",
-            preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-            content: "",
-            date: Date.now()
-        },
-        {
-            title: "Sit amet & consectetur adipisicing",
-            preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-            content: "",
-            date: Date.now()
-        },
-        {
-            title: "Elit ercitationem: in placeat",
-            preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-            content: "",
-            date: Date.now()
-        },
-        {
-            title: "Possimus rem repellat sint",
-            preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-            content: "",
-            date: Date.now()
-        },
-        {
-            title: "Maiores minus - Nesciunt?",
-            preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-            content: "",
-            date: Date.now()
-        }
-    ]
+    const getRandomDate = (start: Date, end: Date) => {
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    }
+    
+    const generateSamplePosts = () => {
+        const startDate = dayjs().subtract(3, 'day').toDate(); // 3 days ago
+        const endDate = new Date(); // now
+
+        return [
+            {
+                title: "Lorem ipsum dolor",
+                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
+                content: "",
+                date: getRandomDate(startDate, endDate)
+            },
+            {
+                title: "Sit amet & consectetur adipisicing",
+                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
+                content: "",
+                date: getRandomDate(startDate, endDate)
+            },
+            {
+                title: "Elit ercitationem: in placeat",
+                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
+                content: "",
+                date: getRandomDate(startDate, endDate)
+            },
+            {
+                title: "Possimus rem repellat sint",
+                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
+                content: "",
+                date: getRandomDate(startDate, endDate)
+            },
+            {
+                title: "Maiores minus - Nesciunt?",
+                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
+                content: "",
+                date: getRandomDate(startDate, endDate)
+            }
+        ];
+    }
+    
+    const samplePosts = generateSamplePosts()
+        // @ts-ignore
+        .sort((a, b) => b.date - a.date);
     
     dayjs.extend(relativeTime)
     const [currentTime, setCurrentTime] = useState(dayjs());
