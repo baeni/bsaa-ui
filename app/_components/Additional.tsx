@@ -63,7 +63,7 @@ export default function Additional() {
     }, []);
     
     return (
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12">
             {samplePosts.map((post) => (
                 <div key={post.title} className="flex flex-col gap-4 text-black cursor-pointer">
                     <h2 className="font-semibold">{post.title}</h2>
