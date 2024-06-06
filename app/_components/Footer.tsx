@@ -23,8 +23,15 @@ export default function Test() {
 
     return (
         <footer id="footer" className="bg-white">
-            <div className="container text-sm text-center py-10">
-                <p className="text-sm">Copyright &copy; {dayjs().year()}. All Rights Reserved.</p>
+            <div className="container text-sm py-10 flex justify-between">
+                <ul className="inline-flex gap-2">
+                    <li><a className="text-neutral-400 font-medium underline decoration-dotted"
+                           href="mailto:baeni.saa@gmail.com">Contact</a></li>
+                    <li><a className="text-neutral-400 font-medium underline decoration-dotted"
+                           href="">Legal</a></li>
+                </ul>
+
+                <p className="text-neutral-400 text-sm">Copyright &copy; {dayjs().year()}. All Rights Reserved.</p>
             </div>
         </footer>
     );
