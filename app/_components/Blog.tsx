@@ -33,7 +33,10 @@ export default function Additional() {
                 <Link key={post.title} className="flex flex-col gap-4 text-black cursor-pointer" href={`/blog/${post.slug}`}>
                     <h2 className="font-semibold">{post.title}</h2>
                     <p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>
-                    <small className="text-neutral-400">{dayjs().to(post.date)}</small>
+                    <small className="text-neutral-400">
+                        {dayjs().to(post.date)}
+                        by {post.author.name}
+                    </small>
                 </Link>
             ))}
         </div>
