@@ -17,7 +17,7 @@ export default function HeroSlogan() {
             <h1 className="text-6xl md:text-8xl text-white font-bold leading-none pb-8 md:leading-relaxed md:pb-0">Hi, it&apos;s Benny.</h1>
             <p className="text-lg text-neutral-300 leading-relaxed">
                 I try to build wonderful things as a developer with a little big fetish for design.<br/>
-                — Feel free to explore my Blog below there might be something interesting for you as well.
+                — Feel free to explore my Blog about things I do below.
             </p>
         </div>
     );
