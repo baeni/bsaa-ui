@@ -15,11 +15,11 @@ export default function Post({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex flex-col gap-4 text-black cursor-pointer">
+        <div className="container mt-40">
+            <div className="flex flex-col gap-4 text-black">
                 <h2 className="font-semibold">{post.title}</h2>
                 <p className="text-neutral-600">{post.content.replace(/(<([^>]+)>)/ig, "")}</p>
-                <small className="text-neutral-400">{dayjs(post.date).format("DD.MM.YYY")}</small>
+                <small className="text-neutral-400">Published on {dayjs(post.date).format("DD.MM.YYYY [at] HH:MM")} by {post.author.name}</small>
             </div>
         </div>
     );
