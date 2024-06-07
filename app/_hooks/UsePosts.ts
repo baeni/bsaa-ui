@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Post } from "@/app/_models/Post";
-import { ApiResponse } from "@/app/_models/ApiResponse";
 
 const usePosts = () => {
     const [posts, setPosts] = useState<Post[]>([]);
@@ -19,5 +18,16 @@ const usePosts = () => {
 
     return { posts, loading };
 };
+
+export interface ApiResponse {
+    found: number;
+    posts: Post[];
+    meta: {
+        links: {
+            counts: string;
+        };
+        wpcom: boolean;
+    };
+}
 
 export default usePosts;
