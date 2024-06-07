@@ -34,8 +34,7 @@ export default function Additional() {
                     <h2 className="font-semibold">{post.title}</h2>
                     <p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>
                     <small className="text-neutral-400">
-                        {dayjs().to(post.date)}
-                        by {post.author.name}
+                        {dayjs().to(post.date)} by {post.author.name}
                     </small>
                 </Link>
             ))}
