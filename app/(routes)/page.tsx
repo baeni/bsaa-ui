@@ -1,7 +1,7 @@
 import HeroImage from "../_components/HeroImage";
 import HeroSlogan from "../_components/HeroSlogan";
 import Footer from "../_components/Footer";
-import Additional from "../_components/Additional";
+import Blog from "../_components/Blog";
 
 export default function Home() {
     return (
@@ -14,7 +14,7 @@ export default function Home() {
             
             <section className="container mt-[25vh] py-20">
                 <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
-                <Additional />
+                <Blog />
             </section>
             
             <Footer />
