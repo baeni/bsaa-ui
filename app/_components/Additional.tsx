@@ -3,56 +3,16 @@
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import usePosts from "@/app/_hooks/UsePosts";
+import {Post} from "@/app/_models/Post";
 
 export default function Additional() {
-    const getRandomDate = (start: Date, end: Date) => {
-        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    }
-    
-    const generateSamplePosts = () => {
-        const startDate = dayjs().subtract(3, 'day').toDate(); // 3 days ago
-        const endDate = new Date(); // now
-
-        return [
-            {
-                title: "Lorem ipsum dolor",
-                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-                content: "",
-                date: getRandomDate(startDate, endDate)
-            },
-            {
-                title: "Sit amet & consectetur adipisicing",
-                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-                content: "",
-                date: getRandomDate(startDate, endDate)
-            },
-            {
-                title: "Elit ercitationem: in placeat",
-                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-                content: "",
-                date: getRandomDate(startDate, endDate)
-            },
-            {
-                title: "Possimus rem repellat sint",
-                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-                content: "",
-                date: getRandomDate(startDate, endDate)
-            },
-            {
-                title: "Maiores minus - Nesciunt?",
-                preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem in placeat possimus rem repellat sint?",
-                content: "",
-                date: getRandomDate(startDate, endDate)
-            }
-        ];
-    }
-    
-    const samplePosts = generateSamplePosts()
-        // @ts-ignore
-        .sort((a, b) => b.date - a.date);
-    
     dayjs.extend(relativeTime)
+    
     const [currentTime, setCurrentTime] = useState(dayjs());
+    const { posts, loading } = usePosts();
+    
+    // .sort((a, b) => b.date - a.date);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -61,13 +21,17 @@ export default function Additional() {
 
         return () => clearInterval(interval);
     }, []);
+
+    if (loading) {
+        return <small className="text-neutral-400">Loading...</small>;
+    }
     
     return (
         <div className="grid md:grid-cols-2 gap-12">
-            {samplePosts.map((post) => (
+            {posts.map((post: Post) => (
                 <div key={post.title} className="flex flex-col gap-4 text-black cursor-pointer">
                     <h2 className="font-semibold">{post.title}</h2>
-                    <p className="text-neutral-600">{post.preview}</p>
+                    <p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>
                     <small className="text-neutral-400">{dayjs().to(post.date)}</small>
                 </div>
             ))}
