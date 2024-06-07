@@ -30,8 +30,13 @@ export default function Additional() {
     return (
         <div className="grid md:grid-cols-2 gap-12">
             {posts.map((post: Post) => (
-                <Link key={post.title} className="flex flex-col gap-4 text-black cursor-pointer" href={`/blog/${post.slug}`}>
-                    <h2 className="font-semibold">{post.title}</h2>
+                <Link key={post.title} className="group flex flex-col gap-4 text-black cursor-pointer" href={`/blog/${post.slug}`}>
+                    <div className="inline-flex gap-4 items-center">
+                        <h2 className="font-semibold">{post.title}</h2>
+                        <svg className="stroke-neutral-400 size-5 origin-left transition-transform group-hover:scale-x-125" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+                        </svg>
+                    </div>
                     <p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>
                     <small className="text-neutral-400">
                         {dayjs().to(post.date)} by {post.author.name}
