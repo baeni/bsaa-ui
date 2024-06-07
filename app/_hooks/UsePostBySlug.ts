@@ -9,7 +9,7 @@ const usePostBySlug = (slug: string) => {
         const fetchPost = async () => {
             try {
                 const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/bsaa0.wordpress.com/posts/slug:${slug}`);
-                const data = await res.json();
+                const data: Post = await res.json();
                 setPost(data || null);
             } catch (error) {
                 console.error('Error fetching post:', error);
@@ -24,9 +24,5 @@ const usePostBySlug = (slug: string) => {
 
     return { post, loading };
 };
-
-export interface ApiResponse {
-    post: Post
-}
 
 export default usePostBySlug;
