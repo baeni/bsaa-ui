@@ -29,7 +29,7 @@ export default function Additional() {
     }
     
     return (
-        <div className="grid md:grid-cols-2 gap-12">
+        <div id="blog" className="grid md:grid-cols-2 gap-12">
             {posts.map((post: Post) => (
                 <Link key={post.title} className="group flex flex-col gap-4 text-black" href={`/blog/${post.slug}`}>
                     <div className="inline-flex gap-4 items-center">
