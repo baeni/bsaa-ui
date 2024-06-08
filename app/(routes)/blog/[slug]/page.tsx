@@ -31,6 +31,10 @@ export default function Post({ params }: { params: { slug: string } }) {
                     Published on {dayjs(post.date).format("DD.MM.YYYY [at] HH:MM")} by {post.author.name}
                 </small>
 
+                {post.featured_image && (
+                    <img src={post.featured_image} alt="Featured Image"></img>
+                )}
+
                 <div className="text-neutral-600 wp-formatting" dangerouslySetInnerHTML={{__html: post.content}}/>
 
                 <small className="text-neutral-400">
