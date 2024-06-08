@@ -1,6 +1,7 @@
 "use client";
 
 import dayjs from "dayjs";
+import Link from "next/link";
 
 export default function Test() {
     return (
@@ -9,8 +10,8 @@ export default function Test() {
                 <ul className="inline-flex gap-4">
                     <li><a className="text-neutral-400 font-medium underline decoration-dotted"
                            href="mailto:baeni.saa@gmail.com">Contact</a></li>
-                    <li><a className="text-neutral-400 font-medium underline decoration-dotted"
-                           href="">Legal</a></li>
+                    <li><Link className="text-neutral-400 font-medium underline decoration-dotted"
+                           href="/legal">Imprint</Link></li>
                 </ul>
 
                 <p className="text-neutral-400 text-sm text-right">Copyright &copy; {dayjs().year()}. All Rights Reserved.</p>
