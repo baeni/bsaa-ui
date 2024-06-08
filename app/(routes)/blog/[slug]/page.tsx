@@ -31,11 +31,13 @@ export default function Post({ params }: { params: { slug: string } }) {
                     Published on {dayjs(post.date).format("DD.MM.YYYY [at] HH:MM")} by {post.author.name}
                 </small>
 
-                {post.featured_image && (
-                    <img src={post.featured_image} alt="Featured Image"></img>
-                )}
+                <div className="text-neutral-600 wp-formatting">
+                    {post.featured_image && (
+                        <img src={post.featured_image} alt="Featured Image"></img>
+                    )}
 
-                <div className="text-neutral-600 wp-formatting" dangerouslySetInnerHTML={{__html: post.content}}/>
+                    <div dangerouslySetInnerHTML={{__html: post.content}}/>
+                </div>
 
                 <small className="text-neutral-400">
                     <button className="text-neutral-400 hover:text-black transition-colors" onClick={handleCopy}>

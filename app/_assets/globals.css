@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.wp-formatting p {
+.wp-formatting * {
     margin-top: 2rem;
 }
