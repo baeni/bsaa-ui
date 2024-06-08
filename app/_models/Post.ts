@@ -32,7 +32,14 @@ export interface Post {
     is_following: boolean;
     global_ID: string;
     featured_image: string;
-    post_thumbnail: string | null;
+    post_thumbnail: {
+        "ID": number,
+        "URL": string,
+        "guid": string,
+        "mime_type": string,
+        "width": number,
+        "height": number
+    } | null;
     format: string;
     geo: boolean;
     menu_order: number;
