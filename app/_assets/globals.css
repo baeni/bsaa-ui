@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wp-formatting p {
+    margin-top: 2rem;
+}
