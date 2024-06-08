@@ -12,7 +12,6 @@ export default function Home() {
             </section>
             
             <section className="container mt-[25vh] py-20">
-                <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
                 <Blog />
             </section>
         </div>
