@@ -14,6 +14,7 @@ export default function Post({ params }: { params: { slug: string } }) {
             setTimeout(() => setCopied(false), 5000);
         });
     };
+    
     if (loading) {
         return <small className="text-neutral-400">Loading...</small>;
     }
