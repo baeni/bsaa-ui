@@ -4,7 +4,7 @@ import Blog from "../_components/Blog";
 
 export default function Home() {
     return (
-        <main className="min-h-screen">
+        <div className="min-h-screen">
             {/* Hero */}
             <section className="container h-screen flex items-center">
                 <HeroImage />
@@ -15,6 +15,6 @@ export default function Home() {
                 <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
                 <Blog />
             </section>
-        </main>
+        </div>
     );
 }
