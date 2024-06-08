@@ -38,9 +38,9 @@ export default function Additional() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
                         </svg>
                     </div>
-                    {post.post_thumbnail && (
-                        <Image src={post.post_thumbnail.URL} alt="Thumbnail" width={post.post_thumbnail.width} height={post.post_thumbnail.height}></Image>
-                    )}
+                    {/*{post.post_thumbnail && (*/}
+                    {/*    <Image src={post.post_thumbnail.URL} alt="Thumbnail" width={post.post_thumbnail.width} height={post.post_thumbnail.height}></Image>*/}
+                    {/*)}*/}
                     <p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>
                     <small className="text-neutral-400">
                         {dayjs().to(post.date)} by {post.author.name}
