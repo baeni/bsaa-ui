@@ -28,7 +28,7 @@ export default function Additional() {
     }
     
     return (
-        <div id="blog">
+        <div id="blog scroll-mt-10">
             <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
             <div className="grid md:grid-cols-2 gap-12">
                 {posts.map((post: Post) => (
