@@ -10,7 +10,7 @@ const usePosts = () => {
             // const res = await fetch("https://public-api.wordpress.com/rest/v1.1/sites/bsaa0.wordpress.com/posts/");
             const res = await fetch("http://49.12.218.142:8055/items/produkte");
             const data: ApiResponse = await res.json();
-            setPosts(data.posts);
+            setPosts(data.data);
             setLoading(false);
         };
 
@@ -21,14 +21,16 @@ const usePosts = () => {
 };
 
 export interface ApiResponse {
-    found: number;
-    posts: Post[];
-    meta: {
-        links: {
-            counts: string;
-        };
-        wpcom: boolean;
-    };
+    data: Post[];
+    
+    // found: number;
+    // posts: Post[];
+    // meta: {
+    //     links: {
+    //         counts: string;
+    //     };
+    //     wpcom: boolean;
+    // };
 }
 
 export default usePosts;
