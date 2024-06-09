@@ -29,18 +29,6 @@ export default function Post({ params }: { params: { slug: string } }) {
                 <h2 className="font-semibold">{post.title}</h2>
 
                 <small className="text-neutral-400">
-                    Published on {dayjs(post.date).format("DD.MM.YYYY [at] HH:MM")} by {post.author.name}
-                </small>
-
-                <div className="text-neutral-600 wp-formatting">
-                    {post.featured_image && (
-                        <img src={post.featured_image} alt="Featured Image"></img>
-                    )}
-
-                    <div dangerouslySetInnerHTML={{__html: post.content}}/>
-                </div>
-
-                <small className="text-neutral-400">
                     <button className="text-neutral-400 hover:text-black transition-colors" onClick={handleCopy}>
                         {!copied ? (
                             <span>Copy link to clipboard</span>
@@ -50,6 +38,32 @@ export default function Post({ params }: { params: { slug: string } }) {
                     </button>
                 </small>
             </div>
+
+            {/*<div className="flex flex-col gap-4 text-black">*/}
+            {/*    <h2 className="font-semibold">{post.title}</h2>*/}
+
+            {/*    <small className="text-neutral-400">*/}
+            {/*        Published on {dayjs(post.date).format("DD.MM.YYYY [at] HH:MM")} by {post.author.name}*/}
+            {/*    </small>*/}
+
+            {/*    <div className="text-neutral-600 wp-formatting">*/}
+            {/*        {post.featured_image && (*/}
+            {/*            <img src={post.featured_image} alt="Featured Image"></img>*/}
+            {/*        )}*/}
+
+            {/*        <div dangerouslySetInnerHTML={{__html: post.content}}/>*/}
+            {/*    </div>*/}
+
+            {/*    <small className="text-neutral-400">*/}
+            {/*        <button className="text-neutral-400 hover:text-black transition-colors" onClick={handleCopy}>*/}
+            {/*            {!copied ? (*/}
+            {/*                <span>Copy link to clipboard</span>*/}
+            {/*            ) : (*/}
+            {/*                <span>Copied to clipboard</span>*/}
+            {/*            )}*/}
+            {/*        </button>*/}
+            {/*    </small>*/}
+            {/*</div>*/}
         </div>
     );
 }
