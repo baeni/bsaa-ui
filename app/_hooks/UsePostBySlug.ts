@@ -9,7 +9,7 @@ const usePostBySlug = (slug: string) => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await fetch(`https://cms.imgrio.com/items/posts?filter={ "slug": { "_eq": "${slug}" }}`);
+                const res = await fetch(`https://cms.imgrio.com/items/posts?filter={"slug": {"_eq": "${slug}"}}&fields=*,user_created.*,user_updated.*`);
                 const data: ApiResponse = await res.json();
                 setPost(data.data[0] || null);
             } catch (error) {

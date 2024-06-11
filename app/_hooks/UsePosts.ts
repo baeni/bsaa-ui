@@ -7,7 +7,7 @@ const usePosts = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await fetch("https://cms.imgrio.com/items/posts");
+            const res = await fetch("https://cms.imgrio.com/items/posts?fields=*,user_created.*,user_updated.*");
             const data: ApiResponse = await res.json();
             setPosts(data.data);
             setLoading(false);
