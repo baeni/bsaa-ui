@@ -7,8 +7,7 @@ const usePosts = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            // const res = await fetch("https://public-api.wordpress.com/rest/v1.1/sites/bsaa0.wordpress.com/posts/");
-            const res = await fetch("https://cms.imgrio.com/items/produkte");
+            const res = await fetch("https://cms.imgrio.com/items/posts");
             const data: ApiResponse = await res.json();
             setPosts(data.data);
             setLoading(false);
@@ -22,15 +21,6 @@ const usePosts = () => {
 
 export interface ApiResponse {
     data: Post[];
-    
-    // found: number;
-    // posts: Post[];
-    // meta: {
-    //     links: {
-    //         counts: string;
-    //     };
-    //     wpcom: boolean;
-    // };
 }
 
 export default usePosts;
