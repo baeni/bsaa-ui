@@ -4,8 +4,8 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'bsaa0.wordpress.com'
-            },
+                hostname: 'cms.imgrio.com'
+            }
         ],
     },
 };
