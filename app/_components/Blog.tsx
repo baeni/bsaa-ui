@@ -1,27 +1,23 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import React, { useState } from "react";
 import usePosts from "@/app/_hooks/UsePosts";
 import {Post} from "@/app/_models/Post";
 import Link from "next/link";
 
 export default function Additional() {
-    dayjs.extend(relativeTime)
-    
-    const [currentTime, setCurrentTime] = useState(dayjs());
+    // const [currentTime, setCurrentTime] = useState(dayjs());
     const { posts, loading } = usePosts();
     
     // .sort((a, b) => b.date - a.date);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTime(dayjs());
-        }, 60*1000);
-
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentTime(dayjs());
+    //     }, 60*1000);
+    //
+    //     return () => clearInterval(interval);
+    // }, []);
 
     if (loading) {
         return <small className="text-neutral-400">Loading...</small>;
@@ -46,9 +42,9 @@ export default function Additional() {
                         {post.thumbnail && (
                             <img src={`https://cms.imgrio.com/assets/${post.thumbnail}`} alt="Thumbnail"></img>
                         )}
-                        {/*<p className="text-neutral-600">{post.excerpt.replace(/(<([^>]+)>)/ig, "")}</p>*/}
+                        <p className="text-neutral-600 whitespace-pre-line">{post.excerpt}</p>
                         <small className="text-neutral-400">
-                            {dayjs().to(post.date_created)} by {post.user_created}
+                            Published by {post.user_created.first_name}
                         </small>
                     </Link>
                 ))}
