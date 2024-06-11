@@ -1,18 +1,21 @@
+import { User } from "@/app/_models/User";
+
 export interface Post {
     "id": string,
-    "status": Status,
-    "user_created": string,
+    "status": PostStatus,
+    "user_created": User,
     "date_created": string,
-    "user_updated": string | null,
+    "user_updated": User | null,
     "date_updated": string | null,
     "title": string,
     "content": string,
+    "excerpt": string,
     "thumbnail": string | null,
     "featured_image": string | null,
     "slug": string
 }
 
-export enum Status {
+export enum PostStatus {
     Draft,
     Published,
     Archived
