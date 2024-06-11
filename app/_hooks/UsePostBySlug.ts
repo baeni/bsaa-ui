@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Post } from "@/app/_models/Post";
+import { ApiResponse } from "@/app/_hooks/UsePosts";
 
 const usePostBySlug = (slug: string) => {
     const [post, setPost] = useState<Post | null>(null);
@@ -8,9 +9,9 @@ const usePostBySlug = (slug: string) => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/bsaa0.wordpress.com/posts/slug:${slug}`);
-                const data: Post = await res.json();
-                setPost(data || null);
+                const res = await fetch(`https://cms.imgrio.com/items/posts?filter={ "slug": { "_eq": "${slug}" }}`);
+                const data: ApiResponse = await res.json();
+                setPost(data.data[0] || null);
             } catch (error) {
                 console.error('Error fetching post:', error);
                 setPost(null);
