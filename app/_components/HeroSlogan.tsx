@@ -14,6 +14,10 @@ export default function HeroSlogan() {
             .duration(3);
 
         ScrollTrigger.create({
+            trigger: "#slogan",
+            start: "center center",
+            end: "+=25%",
+            pin: true,
             onUpdate: self => {
                 gsap.to("#slogan", { opacity: 1 - self.progress, scale: 1 + 0.1 * self.progress, filter: `blur(${10 * self.progress}px)`, duration: 0.5 });
             }
