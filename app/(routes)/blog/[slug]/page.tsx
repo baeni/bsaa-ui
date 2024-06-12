@@ -29,13 +29,13 @@ export default function Post({ params }: { params: { slug: string } }) {
     return (
         <div className="container mt-40">
             <div className="flex flex-col gap-4 text-black">
-                <h2 className="font-semibold">{post.title}</h2>
-
                 <small className="text-neutral-400">
                     {!post.user_updated
                         ? `Published by ${post.user_created.first_name} ${dayjs().to(post.date_created)}`
                         : `Last updated by ${post.user_updated.first_name} ${dayjs().to(post.date_updated)}`}
                 </small>
+                
+                <h2 className="text-4xl font-semibold ">{post.title}</h2>
 
                 <div className="text-neutral-600 wp-formatting">
                     {post.featured_image && (
