@@ -10,8 +10,12 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "2rem",
-        md: "8rem"
+        DEFAULT: '1rem',
+        sm: '4rem',
+        md: '6rem',
+        lg: '12rem',
+        xl: '14rem',
+        '2xl': '20rem',
       },
     },
     extend: {
