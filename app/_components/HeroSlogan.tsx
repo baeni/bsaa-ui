@@ -19,7 +19,7 @@ export default function HeroSlogan() {
             end: "+=25%",
             pin: true,
             onUpdate: self => {
-                gsap.to("#slogan", { opacity: 1 - self.progress, scale: 1 + 0.1 * self.progress, filter: `blur(${10 * self.progress}px)` });
+                gsap.to("#slogan", { opacity: 1 - Math.min(0.75, self.progress), scale: 1 + 0.1 * self.progress, filter: `blur(${10 * self.progress}px)` });
             }
         });
     });
