@@ -7,19 +7,19 @@ import Link from "next/link";
 
 export default function HeroSlogan() {
     useGSAP(() => {
-        gsap.fromTo(["#slogan"],
-            { opacity: 0, scale: 0.95, filter: "blur(2px)" },
+        gsap.fromTo("#slogan",
+            { opacity: 0, scale: 0.95, filter: "blur(5px)" },
             { opacity: 1, scale: 1, filter: "blur(0px)" })
             .delay(0.5)
             .duration(3);
 
         ScrollTrigger.create({
             trigger: "#slogan",
-            start: "center center",
+            start: "center+=0.51 center",
             end: "+=25%",
             pin: true,
             onUpdate: self => {
-                gsap.to("#slogan", { opacity: 1 - self.progress, scale: 1 + 0.1 * self.progress, filter: `blur(${10 * self.progress}px)`, duration: 0.5 });
+                gsap.to("#slogan", { opacity: 1 - self.progress, scale: 1 + 0.1 * self.progress, filter: `blur(${10 * self.progress}px)` });
             }
         });
     });
