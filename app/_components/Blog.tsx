@@ -29,7 +29,7 @@ export default function Additional() {
             <div className="grid md:grid-cols-2 gap-12">
                 {posts.map((post: Post) => (
                     <Link key={post.title} className="group flex flex-col gap-4 text-black" href={`/blog/${post.slug}`}>
-                        <div className="grid grid-cols-[auto_minmax(1.5rem,1fr)] gap-4 items-center">
+                        <div className="grid grid-cols-[auto_minmax(1.5rem,1fr)] gap-3 items-center">
                             <h2 className="font-semibold truncate" title={post.title}>{post.title}</h2>
                             <svg
                                 className="stroke-neutral-400 size-5 origin-left group-hover:scale-x-125 transition-transform"
