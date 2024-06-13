@@ -30,20 +30,16 @@ export default function Post({ params }: { params: { slug: string } }) {
         <div className="container mt-40">
             <div className="flex flex-col gap-4 text-black">
                 <small className="text-neutral-400">
-                    {!post.user_updated
-                        ? `Published by ${post.user_created.first_name} ${dayjs().to(post.date_created)}`
-                        : `Last updated by ${post.user_updated.first_name} ${dayjs().to(post.date_updated)}`}
+                    Published by {post.user_created.first_name} {dayjs().to(post.date_created)}
                 </small>
-                
-                <h2 className="text-4xl font-semibold ">{post.title}</h2>
 
-                <div className="text-neutral-600 wp-formatting">
-                    {post.featured_image && (
-                        <img src={`https://cms.imgrio.com/assets/${post.featured_image}`} alt="Featured Image"></img>
-                    )}
+                <h2 className="text-4xl font-semibold">{post.title}</h2>
 
-                    <div dangerouslySetInnerHTML={{__html: post.content}}/>
-                </div>
+                {post.featured_image && (
+                    <img className="my-8" src={`https://cms.imgrio.com/assets/${post.featured_image}`} alt="Featured Image"></img>
+                )}
+
+                <div className="flex flex-col gap-8 text-neutral-600" dangerouslySetInnerHTML={{__html: post.content}}/>
 
                 <small className="text-neutral-400">
                     <button className="text-neutral-400 hover:text-black transition-colors" onClick={handleCopy}>
