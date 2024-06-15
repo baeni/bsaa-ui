@@ -27,9 +27,9 @@ export default function Additional() {
                                           d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
                                 </svg>
                             </div>
-                            {post.thumbnail && (
+                            {post.featured_image && (
                                 <img className="aspect-[16/10] object-cover"
-                                     src={`https://cms.imgrio.com/assets/${post.thumbnail}`} alt="Thumbnail"/>
+                                     src={`https://cms.imgrio.com/assets/${post.featured_image}?quality=20`} alt="Thumbnail"/>
                             )}
                             <p className="text-neutral-600 whitespace-pre-line">{post.excerpt}</p>
                             <small className="text-neutral-400">
