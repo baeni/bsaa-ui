@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Post } from "@/app/_models/Post";
+import { Post } from "@/application/models/Post";
 import { ApiResponse } from "@/app/_hooks/UsePosts";
 
 const usePostBySlug = (slug: string) => {

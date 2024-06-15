@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import usePosts from "@/app/_hooks/UsePosts";
-import {Post} from "@/app/_models/Post";
+import { Post } from "@/application/models/Post";
 import Link from "next/link";
 
 export default function Additional() {
@@ -24,7 +24,7 @@ export default function Additional() {
     }
     
     return (
-        <div id="blog" className="scroll-mt-32">
+        <div id="blog" className="scroll-mt-10">
             <h3 className="text-neutral-400 font-medium pb-10">Blog</h3>
             <div className="grid md:grid-cols-2 gap-12">
                 {posts.map((post: Post) => (

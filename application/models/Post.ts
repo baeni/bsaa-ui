@@ -1,4 +1,4 @@
-import { User } from "@/app/_models/User";
+import { User } from "@/application/models/User";
 
 export interface Post {
     "id": string,
