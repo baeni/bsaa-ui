@@ -10,7 +10,6 @@ export interface Post {
     title: string,
     content: string,
     excerpt: string,
-    thumbnail: string | null,
     featured_image: string | null,
     slug: string
 }
