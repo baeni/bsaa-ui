@@ -6,7 +6,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import BackgroundImage from "@/public/bg.jpg";
 import Image from "next/image";
 
-export default function Test() {
+export default function HeroImage() {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
         
