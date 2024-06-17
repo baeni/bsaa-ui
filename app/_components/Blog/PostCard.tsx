@@ -13,12 +13,6 @@ export default function PostCard(props: Props) {
     useGSAP(() => {
         const card = cardRef.current;
         
-        // gsap.fromTo(".postCard",
-        //     { opacity: 0, scale: 0.95, filter: "blur(5px)", rotate: 2 },
-        //     { opacity: 1, scale: 1, filter: "blur(0px)", rotate: 0 })
-        //     .delay(0.5)
-        //     .duration(3);
-
         if(card) {
             gsap.fromTo(card,
                 { opacity: 0, scale: 0.95, filter: "blur(5px)" },
@@ -26,7 +20,7 @@ export default function PostCard(props: Props) {
                         trigger: card,
                         start: "top bottom",
                         toggleActions: "play none none reset"
-                    }
+                    }, delay: 0.175
                 }
             );
         }
