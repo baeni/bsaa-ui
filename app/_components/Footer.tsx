@@ -3,7 +3,7 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 
-export default function Test() {
+export default function Footer() {
     return (
         <footer id="footer" className="bg-white">
             <div className="container text-sm py-10 grid md:grid-cols-2 justify-between">
