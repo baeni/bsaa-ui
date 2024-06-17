@@ -17,7 +17,7 @@ export default function Home() {
             <section className="mt-[25vh] py-20">
                 <div id="blog" className="scroll-mt-10 flex flex-col gap-10">
                     <Link className="text-neutral-400 font-medium" href="/blog">Blog</Link>
-                    <PostList limit={2} />
+                    <PostList />
                 </div>
             </section>
         </div>
