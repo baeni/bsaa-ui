@@ -1,11 +1,39 @@
-import React from "react";
+"use client";
+
+import React, {useRef} from "react";
 import {Post} from "@/application/models/Post";
 import Link from "next/link";
 import ReadingTime from "reading-time";
+import {useGSAP} from "@gsap/react";
+import {gsap} from "gsap";
 
 export default function PostCard(props: Props) {
+    const cardRef = useRef<HTMLAnchorElement>(null);
+    
+    useGSAP(() => {
+        const card = cardRef.current;
+        
+        // gsap.fromTo(".postCard",
+        //     { opacity: 0, scale: 0.95, filter: "blur(5px)", rotate: 2 },
+        //     { opacity: 1, scale: 1, filter: "blur(0px)", rotate: 0 })
+        //     .delay(0.5)
+        //     .duration(3);
+
+        if(card) {
+            gsap.fromTo(card,
+                { opacity: 0, scale: 0.95, filter: "blur(5px)" },
+                { opacity: 1, scale: 1, filter: "blur(0px)", scrollTrigger: {
+                        trigger: card,
+                        start: "top bottom",
+                        toggleActions: "play none none reset"
+                    }
+                }
+            );
+        }
+    });
+    
     return (
-        <Link className="group flex flex-col gap-4 text-black" href={`/blog/${props.post.slug}`}>
+        <Link ref={cardRef} className="group flex flex-col gap-4 text-black" href={`/blog/${props.post.slug}`}>
             <div>
                 <small className="text-neutral-400">
                     {ReadingTime(props.post.content).text}
