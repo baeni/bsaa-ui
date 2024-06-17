@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <SmoothScrolling>
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow container">
             {children}
           </main>
           <Footer />
