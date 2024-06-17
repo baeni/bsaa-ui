@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PostCard(props: Props) {
     return (
-        <Link key={props.post.title} className="group flex flex-col gap-4 text-black" href={`/blog/${props.post.slug}`}>
+        <Link className="group flex flex-col gap-4 text-black" href={`/blog/${props.post.slug}`}>
             <div className="grid grid-cols-[auto_minmax(1.5rem,1fr)] gap-3 items-center">
                 <h2 className="font-semibold truncate" title={props.post.title}>{props.post.title}</h2>
                 <svg
