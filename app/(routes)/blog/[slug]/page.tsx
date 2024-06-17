@@ -28,7 +28,7 @@ export default function Post({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <div className="container mt-40">
+        <div className="mt-40">
             <div className="flex flex-col gap-4 text-black">
                 <small className="text-neutral-400" title={
                     post.user_updated && post.date_updated
