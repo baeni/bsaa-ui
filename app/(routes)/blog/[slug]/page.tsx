@@ -4,6 +4,7 @@ import {useState} from "react";
 import usePostBySlug from "@/app/_hooks/UsePostBySlug";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { notFound } from "next/navigation";
 
 export default function Post({ params }: { params: { slug: string } }) {
     dayjs.extend(relativeTime)
@@ -23,7 +24,7 @@ export default function Post({ params }: { params: { slug: string } }) {
     }
     
     if (!post) {
-        return <small className="text-neutral-400">Error</small>;
+        return notFound();
     }
 
     return (
