@@ -4,7 +4,7 @@ import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 import Link from "next/link";
 
-export default function Test() {
+export default function Navbar() {
     useGSAP(() => {
         gsap.fromTo("#navbar",
             { opacity: "0", y: "25" },
@@ -19,9 +19,6 @@ export default function Test() {
                 <Link className="text-black font-bold text-3xl -tracking-[5px]" href="/">
                     Bs.
                 </Link>
-
-                {/*<a className="hidden md:inline-flex items-center gap-10 px-4 py-2 bg-black text-white font-medium"*/}
-                {/*   href="mailto:baeni.saa@gmail.com">Get in Touch</a>*/}
             </div>
         </nav>
     );
