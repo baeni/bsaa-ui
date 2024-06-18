@@ -20,6 +20,14 @@ export default function Home() {
                     <PostList />
                 </div>
             </section>
+            
+            {/* Contact */}
+            <section className="pb-20">
+                <div className="flex justify-between items-center p-2 pl-6 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full">
+                    <p className="font-medium">Wanna start something great?</p>
+                    <a className="px-4 py-2 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full font-medium" href="mailto:baeni.saa@gmail.com">Let&apos;s connect!</a>
+                </div>
+            </section>
         </div>
     );
 }
