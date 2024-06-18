@@ -23,12 +23,12 @@ export default function HeroSlogan() {
     });
     
     return (
-        <div id="slogan" className="flex flex-col gap-6 w-full origin-left mix-blend-color-dodge">
-            <h1 className="text-6xl md:text-7xl text-neutral-300 font-bold leading-tight uppercase">
+        <div id="slogan" className="flex flex-col gap-4 md:gap-6 w-full origin-left mix-blend-color-dodge">
+            <h1 className="text-5xl md:text-7xl text-neutral-300 font-bold leading-none uppercase">
                 Hello,<br/>
                 it&apos;s Benny.
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-400 leading-snug text-wrap">
+            <p className="text-md md:text-xl text-neutral-400 leading-snug text-wrap">
                 I try to build wonderful things<br/>
                 as a developer with a little big fetish for design.
             </p>
