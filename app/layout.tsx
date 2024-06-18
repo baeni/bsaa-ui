@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.className} flex flex-col min-h-screen container`}>
         <SmoothScrolling>
           <Navbar />
-          <main className="flex-grow container">
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />
