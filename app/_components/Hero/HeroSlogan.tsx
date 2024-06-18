@@ -23,10 +23,14 @@ export default function HeroSlogan() {
     });
     
     return (
-        <div id="slogan" className="w-full origin-left mix-blend-color-dodge">
-            <h1 className="text-6xl md:text-8xl text-neutral-300 font-bold leading-none md:leading-relaxed pb-8 md:pb-0">Hi, it&apos;s Benny.</h1>
-            <p className="text-lg text-neutral-400 leading-relaxed">
-                I try to build wonderful things as a developer with a little big fetish for design. — Feel free to <Link className="underline decoration-dotted" href="#blog">explore my Blog</Link> about things I do.
+        <div id="slogan" className="flex flex-col gap-6 w-full origin-left mix-blend-color-dodge">
+            <h1 className="text-7xl md:text-9xl text-neutral-300 font-bold leading-tight">
+                Hello,<br/>
+                it&apos;s Benny.
+            </h1>
+            <p className="text-2xl text-neutral-400 leading-snug">
+                I try to build wonderful things<br/>
+                as a developer with a little big fetish for design.
             </p>
         </div>
     );
