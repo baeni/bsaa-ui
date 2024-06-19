@@ -33,7 +33,7 @@ export default function PostCard(props: Props) {
                     {ReadingTime(props.post.content).text}
                 </small>
                 <div className="grid grid-cols-[auto_minmax(1.5rem,1fr)] gap-3 items-center">
-                    <h2 className="font-semibold truncate" title={props.post.title}>{props.post.title}</h2>
+                    <h2 className="text-lg md:text-base font-semibold truncate" title={props.post.title}>{props.post.title}</h2>
                     <svg
                         className="stroke-neutral-400 size-5 origin-left group-hover:scale-x-125 transition-transform"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
@@ -47,7 +47,7 @@ export default function PostCard(props: Props) {
                 <img className="aspect-[16/10] object-cover"
                      src={`https://cms.imgrio.com/assets/${props.post.featured_image}?quality=20`} alt="Thumbnail"/>
             )}
-            <p className="text-neutral-600 whitespace-pre-line">{props.post.excerpt}</p>
+            <p className="text-sm text-neutral-600 whitespace-pre-line">{props.post.excerpt}</p>
             <small className="text-neutral-400">
                 Published by {props.post.user_created.first_name}
             </small>
