@@ -2,7 +2,7 @@
 
 import dayjs from "dayjs";
 import Link from "next/link";
-import * as Constants from "@/app/constants";
+import {CONTACT_URL} from "@/app/constants";
 
 export default function Footer() {
     return (
@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="text-sm py-10 grid md:grid-cols-2 justify-between">
                 <ul className="inline-flex gap-4">
                     <li><a className="text-neutral-400 font-medium underline decoration-dotted"
-                           href={`mailto:${Constants.EMAIL_ADDRESS}`}>Contact</a></li>
+                           href={CONTACT_URL} target="_blank">Contact</a></li>
                     <li><Link className="text-neutral-400 font-medium underline decoration-dotted"
                            href="/legal">Imprint</Link></li>
                 </ul>
