@@ -3,6 +3,7 @@ import HeroSlogan from "../_components/Hero/HeroSlogan";
 import React from "react";
 import PostList from "@/app/_components/Blog/PostList";
 import Link from "next/link";
+import ContactForm from "@/app/_components/ContactForm";
 
 export default function Home() {
     return (
@@ -23,10 +24,7 @@ export default function Home() {
             
             {/* Contact */}
             <section className="pb-20">
-                <div className="flex justify-between items-center p-2 pl-6 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full">
-                    <p className="font-medium">Wanna start something great?</p>
-                    <a className="px-4 py-2 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full font-medium" href="mailto:baeni.saa@gmail.com">Let&apos;s connect!</a>
-                </div>
+                <ContactForm />
             </section>
         </div>
     );
