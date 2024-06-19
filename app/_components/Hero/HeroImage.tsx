@@ -39,7 +39,7 @@ export default function HeroImage() {
                 trigger: image,
                 start: "center+=0.51 center",
                 onUpdate: self => {
-                    gsap.to(image, { filter: `brightness(${0.75 + 0.75 * self.progress})` });
+                    gsap.to(image, { filter: `brightness(0.75) grayscale(${1.5 * self.progress})` });
                 }
             });
         }
