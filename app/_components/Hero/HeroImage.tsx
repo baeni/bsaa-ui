@@ -34,13 +34,23 @@ export default function HeroImage() {
                     gsap.to(image, { padding: "0rem", duration: 0.175 });
                 }
             });
+
+            ScrollTrigger.create({
+                trigger: image,
+                start: "center+=0.51 center",
+                onUpdate: self => {
+                    gsap.to(image, { filter: `brightness(${0.75 + 0.75 * self.progress})` });
+                }
+            });
         }
     })
 
     return (
         <div ref={imageWrapperRef} className="w-screen h-screen absolute top-0 left-0 z-[-1]">
-            <img ref={imageRef} className="w-full h-full object-cover pointer-events-none select-none"
-                 src={BackgroundImage.src} alt="Background"
+            <img ref={imageRef}
+                 className="w-full h-full object-cover pointer-events-none select-none brightness-75"
+                 src={BackgroundImage.src}
+                 alt="Background"
             />
         </div>
     );
