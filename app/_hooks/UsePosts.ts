@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Post } from "@/application/models/Post";
+import * as Constants from "@/app/constants";
 
 const usePosts = (limit: number | null = null, sortField: string = "date_created", sortOrder: SortOrder = SortOrder.Descending) => {
     const [posts, setPosts] = useState<Post[]>([]);
@@ -7,7 +8,7 @@ const usePosts = (limit: number | null = null, sortField: string = "date_created
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await fetch("https://cms.imgrio.com/items/posts" +
+            const res = await fetch(`${Constants.API_BASE_URL}/items/posts` +
                 "?fields=*,user_created.*,user_updated.id,user_updated.first_name" +
                 `&sort=${sortOrder === SortOrder.Descending ? '-' : ''}${sortField}` +
                 `&limit=${limit ? limit : -1}`);

@@ -3,6 +3,7 @@
 import React, {useRef} from "react";
 import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
+import * as Constants from "@/app/constants";
 
 export default function Contact() {
     const contactWrapperRef = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export default function Contact() {
 
                 <a
                     className="px-4 py-2 bg-neutral-400 bg-opacity-25 hover:bg-opacity-35 transition-all duration-300 backdrop-blur rounded-full text-xs md:text-sm font-medium text-nowrap"
-                    href="https://t0htfd31vkx.typeform.com/to/R5MK3kJw"
+                    href={Constants.CONTACT_URL}
                     target="_blank">
                     Let&apos;s connect!
                 </a>
