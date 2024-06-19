@@ -29,7 +29,7 @@ export default function Contact() {
     return (
         <div ref={contactWrapperRef}>
             <div
-                className="flex justify-between items-center p-2 pl-6 bg-gradient-to-tr from-neutral-200 to-neutral-50 bg-opacity-25 backdrop-blur border border-neutral-200 rounded-full drop-shadow"
+                className="flex justify-between items-center p-1 pl-3 md:p-2 md:pl-4 bg-gradient-to-tr from-neutral-200 to-neutral-50 bg-opacity-25 backdrop-blur border border-neutral-200 rounded-full drop-shadow"
                 ref={contactRef}>
                 <p className="block md:hidden text-xs md:text-sm font-medium">Wanna grow together?</p>
                 <p className="hidden md:block text-sm font-medium">Wanna build something great together?</p>
