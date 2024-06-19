@@ -20,7 +20,7 @@ export default function Contact() {
                         trigger: contact,
                         start: "top bottom",
                         toggleActions: "play none none reset"
-                    }, delay: 0.175
+                    }, delay: 0.33
                 }
             );
         }
