@@ -28,11 +28,12 @@ export default function Contact() {
     return (
         <div ref={contactWrapperRef}>
             <div
-                className="flex justify-between items-center p-2 pl-6 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full drop-shadow-2xl"
+                className="flex justify-between items-center p-2 pl-6 bg-gradient-to-tr from-orange-100 to-orange-50 bg-opacity-25 backdrop-blur border border-neutral-200 rounded-full drop-shadow"
                 ref={contactRef}>
                 <p className="text-xs md:text-sm font-medium">Wanna start something great?</p>
+
                 <a
-                    className="px-4 py-2 bg-neutral-300 bg-opacity-25 backdrop-blur rounded-full text-xs md:text-sm font-medium"
+                    className="px-4 py-2 bg-neutral-400 bg-opacity-25 hover:bg-opacity-35 transition-all duration-300 backdrop-blur rounded-full text-xs md:text-sm font-medium"
                     href="https://t0htfd31vkx.typeform.com/to/R5MK3kJw"
                     target="_blank">
                     Let&apos;s connect!
