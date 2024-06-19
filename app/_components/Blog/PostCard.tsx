@@ -20,7 +20,7 @@ export default function PostCard(props: Props) {
                         trigger: card,
                         start: "top bottom",
                         toggleActions: "play none none reset"
-                    }, delay: 0.33
+                    }, delay: 0.25
                 }
             );
         }
