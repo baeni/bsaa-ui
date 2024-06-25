@@ -20,8 +20,8 @@ export default function PostsList(props: Props) {
             {loading ? (
                 <small className="text-neutral-400">Loading...</small>
             ) : (
-                posts.map((post: Post) => (
-                        <PostCard post={post} key={post.id} />
+                posts.map((post: Post, index: number) => (
+                        <PostCard post={post} index={index} key={post.id} />
                     )
                 ))}
         </div>
