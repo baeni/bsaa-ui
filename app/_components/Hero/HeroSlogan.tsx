@@ -16,7 +16,7 @@ export default function HeroSlogan() {
             gsap.fromTo(slogan,
                 { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`, rotate: 3 },
                 { opacity: 1, scale: 1, filter: "blur(0px)", rotate: 0,
-                    delay: 0.5, duration: 3, ease: "power3.inOut" });
+                    delay: 0.5, duration: 2.5, ease: "sine.inOut" });
 
             ScrollTrigger.create({
                 trigger: slogan,
