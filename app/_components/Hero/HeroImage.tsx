@@ -19,7 +19,8 @@ export default function HeroImage() {
         if (imageWrapper && image) {
             gsap.fromTo(imageWrapper,
                 { scale: 1.1, opacity: 0, padding: 0 },
-                { scale: 1, opacity: 1, duration: 1.5 }
+                { scale: 1, opacity: 1,
+                    duration: 1.5, ease: "circ.inOut" }
             );
 
             ScrollTrigger.create({
