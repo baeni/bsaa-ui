@@ -14,14 +14,14 @@ export default function HeroSlogan() {
         
         if (slogan) {
             gsap.fromTo(slogan,
-                { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`, rotate: 2 },
+                { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`, rotate: 3 },
                 { opacity: 1, scale: 1, filter: "blur(0px)", rotate: 0, delay: 0.5, duration: 3 });
 
             ScrollTrigger.create({
                 trigger: slogan,
                 start: "center+=0.51 center",
                 onUpdate: self => {
-                    gsap.to(slogan, { opacity: 1 - self.progress, filter: `blur(${10 * self.progress}px)`, rotate: -2.5 * self.progress });
+                    gsap.to(slogan, { opacity: 1 - self.progress, filter: `blur(${10 * self.progress}px)`, rotate: -3 * self.progress });
                 }
             });
         }
