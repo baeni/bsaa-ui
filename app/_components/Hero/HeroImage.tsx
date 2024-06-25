@@ -37,9 +37,9 @@ export default function HeroImage() {
 
             ScrollTrigger.create({
                 trigger: image,
-                start: "center+=0.51 center",
+                start: "+=25%",
                 onUpdate: self => {
-                    gsap.to(image, { filter: `opacity(${1 - 0.5 * self.progress}) brightness(${0.75 + self.progress}) grayscale(${1.5 * self.progress})` });
+                    gsap.to(image, { filter: `brightness(${0.75 + self.progress}) grayscale(${1.5 * self.progress})` });
                 }
             });
         }
