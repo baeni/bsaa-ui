@@ -14,13 +14,16 @@ export default function PostCard(props: Props) {
         const card = cardRef.current;
         
         if(card) {
+            const isOddIndex = props.index && props.index % 2 !== 0;
+            const delay = isOddIndex ? 0.4143 : 0.25;
+            
             gsap.fromTo(card,
                 { opacity: 0, scale: 0.95, filter: "blur(5px)" },
                 { opacity: 1, scale: 1, filter: "blur(0px)", scrollTrigger: {
                         trigger: card,
                         start: "top bottom",
                         toggleActions: "play none none reset"
-                    }, delay: 0.25
+                    }, delay: delay, duration: 1.175
                 }
             );
         }
@@ -57,4 +60,5 @@ export default function PostCard(props: Props) {
 
 interface Props {
     post: Post
+    index?: number
 }
