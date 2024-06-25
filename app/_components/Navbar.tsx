@@ -9,7 +9,8 @@ export default function Navbar() {
     useGSAP(() => {
         gsap.fromTo("#navbar",
             { opacity: "0", y: "25" },
-            { opacity: "1", y: "0", delay: 1, duration: 3, ease: "power3.inOut" });
+            { opacity: "1", y: "0",
+                delay: 1, duration: 3, ease: "power4.inOut" });
     });
 
     return (
