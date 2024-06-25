@@ -6,6 +6,7 @@ import Link from "next/link";
 import ReadingTime from "reading-time";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
+import * as Constants from "@/app/constants";
 
 export default function PostCard(props: Props) {
     const cardRef = useRef<HTMLAnchorElement>(null);
@@ -14,16 +15,13 @@ export default function PostCard(props: Props) {
         const card = cardRef.current;
         
         if(card) {
-            const isOddIndex = props.index && props.index % 2 !== 0;
-            const delay = isOddIndex ? 0.375 : 0.25;
-            
             gsap.fromTo(card,
-                { opacity: 0, scale: 0.95, filter: "blur(5px)" },
+                { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
                 { opacity: 1, scale: 1, filter: "blur(0px)", scrollTrigger: {
                         trigger: card,
                         start: "top bottom",
                         toggleActions: "play none none reset"
-                    }, delay: delay, duration: 1.175
+                    }, delay: 0.25
                 }
             );
         }
@@ -60,5 +58,4 @@ export default function PostCard(props: Props) {
 
 interface Props {
     post: Post
-    index?: number
 }
