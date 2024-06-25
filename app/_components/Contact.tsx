@@ -15,7 +15,7 @@ export default function Contact() {
 
         if(contactWrapper && contact) {
             gsap.fromTo(contactWrapper,
-                { opacity: 0, scale: 0.95, filter: "blur(5px)" },
+                { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
                 { opacity: 1, scale: 1, filter: "blur(0px)", scrollTrigger: {
                         trigger: contact,
                         start: "top bottom",
