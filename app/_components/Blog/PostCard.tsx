@@ -15,7 +15,7 @@ export default function PostCard(props: Props) {
         
         if(card) {
             const isOddIndex = props.index && props.index % 2 !== 0;
-            const delay = isOddIndex ? 0.4143 : 0.25;
+            const delay = isOddIndex ? 0.375 : 0.25;
             
             gsap.fromTo(card,
                 { opacity: 0, scale: 0.95, filter: "blur(5px)" },
