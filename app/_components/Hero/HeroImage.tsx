@@ -14,11 +14,9 @@ export default function HeroImage() {
         const imageWrapper = imageWrapperRef.current;
         const image = imageRef.current;
         
-        gsap.registerPlugin(ScrollTrigger);
-        
         if (imageWrapper && image) {
-            gsap.fromTo(imageWrapper,
-                { scale: 1.1, opacity: 0, padding: 0 },
+            gsap.fromTo(image,
+                { scale: 1.1, opacity: 0 },
                 { scale: 1, opacity: 1,
                     duration: 3.75, ease: "sine.inOut" }
             );
@@ -47,7 +45,7 @@ export default function HeroImage() {
     })
 
     return (
-        <div ref={imageWrapperRef} className="w-screen h-screen absolute top-0 left-0 z-[-1]">
+        <div ref={imageWrapperRef} className="w-screen h-screen absolute inset-0 z-[-1]">
             <img ref={imageRef}
                  className="w-full h-full object-cover pointer-events-none select-none brightness-75"
                  src={BackgroundImage.src}
