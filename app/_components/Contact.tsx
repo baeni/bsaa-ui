@@ -35,7 +35,7 @@ export default function Contact() {
                 <p className="hidden md:block text-sm font-medium">Wanna build something great together?</p>
 
                 <a
-                    className="px-4 py-2 bg-neutral-400 bg-opacity-25 hover:bg-opacity-35 transition-all duration-300 backdrop-blur rounded-full text-xs md:text-sm font-medium text-nowrap"
+                    className="px-4 py-2 bg-neutral-400 bg-opacity-25 hover:bg-opacity-40 transition-all duration-300 backdrop-blur rounded-full text-xs md:text-sm font-medium text-nowrap"
                     href={Constants.CONTACT_URL}
                     target="_blank">
                     Let&apos;s connect!
