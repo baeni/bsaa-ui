@@ -4,18 +4,25 @@ import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 import Link from "next/link";
 import * as Constants from "@/app/constants";
+import {useRef} from "react";
 
 export default function Navbar() {
+    const navbarRef = useRef<HTMLDivElement>(null);
+    
     useGSAP(() => {
-        gsap.fromTo("#navbar",
-            { opacity: "0", y: "25" },
+        const navbar = navbarRef.current;
+        
+        gsap.fromTo(navbar,
+            { opacity: "0", y: "-25" },
             { opacity: "1", y: "0",
                 delay: 1, duration: 3, ease: "power4.inOut" });
     });
 
     return (
-        <nav id="navbar" className="flex justify-between mt-14 w-full fixed top-0 z-50">
-            <Link className="font-bold text-3xl -tracking-[5px]" href="/">
+        <nav className="fixed mt-8 z-50"
+             ref={navbarRef}>
+            <Link className="font-bold text-3xl -tracking-[5px]"
+                  href="/">
                 {Constants.PAGE_TITLE}
             </Link>
         </nav>
