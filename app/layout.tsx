@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/_assets/globals.css";
-import {gsap} from "gsap";
 import SmoothScrolling from "@/app/_components/SmoothScrolling";
 import Navbar from "@/app/_components/Navbar";
 import Footer from "@/app/_components/Footer";
