@@ -9,6 +9,7 @@ import {useRef} from "react";
 export default function HeroSlogan() {
     const sloganRef = useRef<HTMLDivElement>(null);
     
+    gsap.registerPlugin(ScrollTrigger);
     useGSAP(() => {
         const slogan = sloganRef.current;
         

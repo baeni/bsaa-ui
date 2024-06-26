@@ -9,7 +9,8 @@ import BackgroundImage from "@/public/bg.jpg";
 export default function HeroImage() {
     const imageWrapperRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
-    
+
+    gsap.registerPlugin(ScrollTrigger);
     useGSAP(() => {
         const imageWrapper = imageWrapperRef.current;
         const image = imageRef.current;
