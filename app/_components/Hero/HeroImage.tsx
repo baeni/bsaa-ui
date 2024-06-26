@@ -27,11 +27,14 @@ export default function HeroImage() {
                 start: "top top",
                 end: "+=25%",
                 pin: true,
+                anticipatePin: 0.25,
                 onLeave: () => {
-                    gsap.to(image, { padding: "0.75rem", duration: 0.175 });
+                    gsap.to(image, { padding: "0.75rem",
+                        duration: 0.5 });
                 },
                 onEnterBack: () => {
-                    gsap.to(image, { padding: "0rem", duration: 0.175 });
+                    gsap.to(image, { padding: "0rem",
+                        duration: 0.125 });
                 }
             });
 
