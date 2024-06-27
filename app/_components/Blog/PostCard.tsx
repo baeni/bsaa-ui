@@ -47,7 +47,8 @@ export default function PostCard(props: Props) {
             </div>
             {props.post.featured_image && (
                 <img className="aspect-[16/10] object-cover"
-                     src={`https://cms.imgrio.com/assets/${props.post.featured_image}?quality=20`} alt="Thumbnail"/>
+                     src={`https://cms.imgrio.com/assets/${props.post.featured_image}?quality=20`}
+                     alt="Thumbnail"/>
             )}
             <p className="text-sm text-neutral-600 whitespace-pre-line">{props.post.excerpt}</p>
             <small className="text-neutral-400">
