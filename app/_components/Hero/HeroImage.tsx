@@ -49,7 +49,7 @@ export default function HeroImage() {
     })
 
     return (
-        <div ref={imageWrapperRef} className="w-screen h-screen absolute inset-0 z-[-1]">
+        <div ref={imageWrapperRef} className="w-screen h-screen absolute inset-0 -z-10">
             <img ref={imageRef}
                  className="w-full h-full object-cover pointer-events-none select-none brightness-75"
                  src={BackgroundImage.src}
