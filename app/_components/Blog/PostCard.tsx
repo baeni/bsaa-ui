@@ -17,11 +17,12 @@ export default function PostCard(props: Props) {
         if(card) {
             gsap.fromTo(card,
                 { opacity: 0, scale: 0.95, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
-                { opacity: 1, scale: 1, filter: "blur(0px)", scrollTrigger: {
+                { opacity: 1, scale: 1, filter: "blur(0px)",
+                    scrollTrigger: {
                         trigger: card,
-                        start: "top bottom",
-                        toggleActions: "play none none reset"
-                    }, delay: 0.25, ease: "circ.inOut"
+                        start: "top bottom-=10%",
+                        toggleActions: "play none none reverse"
+                    }, ease: "circ.inOut"
                 }
             );
         }
