@@ -20,7 +20,7 @@ export default function PostCard(props: Props) {
                 { opacity: 1, scale: 1, filter: "blur(0px)",
                     scrollTrigger: {
                         trigger: card,
-                        start: "top bottom-=10%",
+                        start: "top bottom-=15%",
                         toggleActions: "play none none reverse"
                     }, ease: "circ.inOut"
                 }
