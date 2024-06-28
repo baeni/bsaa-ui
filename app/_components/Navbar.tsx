@@ -9,6 +9,7 @@ import {CONTACT_URL} from "@/app/constants";
 
 export default function Navbar() {
     const navbarRef = useRef<HTMLDivElement>(null);
+    const navbarOverlayBtnSvgRef = useRef<SVGSVGElement>(null);
     const navbarOverlayRef = useRef<HTMLDivElement>(null);
     const navbarOverlayBgRef = useRef<HTMLDivElement>(null);
     const navbarOverlayListRef = useRef<HTMLUListElement>(null);
@@ -25,6 +26,7 @@ export default function Navbar() {
     const [isShowingNavbarOverlay, setIsShowingNavbarOverlay] = useState(false);
     
     function toggleNavOverlay() {
+        const navbarOverlayBtnSvg = navbarOverlayBtnSvgRef.current;
         const navbarOverlay = navbarOverlayRef.current;
         const navbarOverlayBg = navbarOverlayBgRef.current;
         const navbarOverlayList = navbarOverlayListRef.current;
@@ -35,7 +37,10 @@ export default function Navbar() {
         
         const timeline = gsap.timeline({ paused: true });
 
-        timeline.fromTo(navbarOverlay,
+        timeline.fromTo(navbarOverlayBtnSvg,
+            { rotation: 0 },
+            { rotation: 135, duration: 1, ease: 'circ.inOut'
+            }, 0).fromTo(navbarOverlay,
             { opacity: 0, visibility: 'hidden' },
             { opacity: 1, visibility: 'visible', duration: 1, ease: 'circ.inOut'
             }, 0).fromTo(navbarOverlayList,
@@ -66,7 +71,12 @@ export default function Navbar() {
                     </Link>
 
                     <button onClick={toggleNavOverlay}>
-                        asdf
+                        <svg className="stroke-neutral-400 size-5"
+                             ref={navbarOverlayBtnSvgRef}     
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                        </svg>
                     </button>
                 </div>
             </nav>
@@ -75,13 +85,13 @@ export default function Navbar() {
             <div className="fixed inset-0 flex items-center z-40 invisible"
                  ref={navbarOverlayRef}
                  onClick={toggleNavOverlay}>
+                <div className="absolute inset-0 bg-white z-[-1] origin-top"
+                     ref={navbarOverlayBgRef}></div>
                 <ul className="flex flex-col gap-6 container font-semibold text-4xl"
                     ref={navbarOverlayListRef}>
                     <li><a href={CONTACT_URL} target="_blank">Contact</a></li>
                     <li><Link href="/legal">Imprint</Link></li>
                 </ul>
-                <div className="absolute inset-0 bg-white z-[-1] origin-top"
-                     ref={navbarOverlayBgRef}></div>
             </div>
         </>
     );
