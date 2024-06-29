@@ -81,7 +81,7 @@ export default function Navbar() {
                     </Link>
 
                     <button onClick={toggleNavOverlay}>
-                        <svg className="stroke-neutral-400 size-5"
+                        <svg className="stroke-neutral-400 size-6 sm:size-5"
                              ref={navbarOverlayBtnSvgRef}
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
