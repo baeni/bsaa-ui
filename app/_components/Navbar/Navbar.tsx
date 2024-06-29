@@ -37,12 +37,17 @@ export default function Navbar() {
         }
         
         const timeline = gsap.timeline({ paused: true });
+        const navbarOverlayBtnSvgLines = navbarOverlayBtnSvg?.querySelectorAll("path");
 
         timeline
-            .fromTo(navbarOverlayBtnSvg,
-            { rotation: 0 },
-            { rotation: 135, duration: 1, ease: 'circ.inOut'
+            .fromTo(navbarOverlayBtnSvgLines![0] ?? null,
+            { translateY: 0 },
+            { translateY: -64, duration: 1, ease: 'circ.inOut'
             }, 0)
+            .fromTo(navbarOverlayBtnSvgLines![1] ?? null,
+                { translateY: 0 },
+                { translateY: 64, duration: 1, ease: 'circ.inOut'
+                }, 0)
             .fromTo(navbarOverlay,
             { opacity: 0, visibility: 'hidden' },
             { opacity: 1, visibility: 'visible', duration: 0.75, ease: 'circ.inOut'
@@ -77,11 +82,21 @@ export default function Navbar() {
 
                     <button onClick={toggleNavOverlay}>
                         <svg className="stroke-neutral-400 size-5"
-                             ref={navbarOverlayBtnSvgRef}     
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 448 512">
-                            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                             ref={navbarOverlayBtnSvgRef}
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M32 288c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 288z"/>
+                            <path
+                                d="M32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z"/>
                         </svg>
+
+                        {/*<svg className="stroke-neutral-400 size-5"*/}
+                        {/*     ref={navbarOverlayBtnSvgRef}*/}
+                        {/*     xmlns="http://www.w3.org/2000/svg"*/}
+                        {/*     viewBox="0 0 448 512">*/}
+                        {/*    <path*/}
+                        {/*        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>*/}
+                        {/*</svg>*/}
                     </button>
                 </div>
             </nav>
