@@ -6,6 +6,7 @@ import Link from "next/link";
 import * as Constants from "@/app/constants";
 import {useRef, useState} from "react";
 import {CONTACT_URL} from "@/app/constants";
+import NavbarListItem from "@/app/_components/Navbar/NavbarListItem";
 
 export default function Navbar() {
     const navbarRef = useRef<HTMLDivElement>(null);
@@ -37,24 +38,28 @@ export default function Navbar() {
         
         const timeline = gsap.timeline({ paused: true });
 
-        timeline.fromTo(navbarOverlayBtnSvg,
+        timeline
+            .fromTo(navbarOverlayBtnSvg,
             { rotation: 0 },
             { rotation: 135, duration: 1, ease: 'circ.inOut'
-            }, 0).fromTo(navbarOverlay,
+            }, 0)
+            .fromTo(navbarOverlay,
             { opacity: 0, visibility: 'hidden' },
-            { opacity: 1, visibility: 'visible', duration: 1, ease: 'circ.inOut'
-            }, 0).fromTo(navbarOverlayList,
-            { filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
-            { filter: 'blur(0px)', duration: 1, ease: 'circ.inOut'
-            }, 0).fromTo(navbarOverlayBg,
+            { opacity: 1, visibility: 'visible', duration: 0.75, ease: 'circ.inOut'
+            }, 0)
+            .fromTo(navbarOverlayBg,
             { scaleY: 0 },
-            { scaleY: 1, duration: 1, ease: 'circ.inOut'
+            { scaleY: 1, duration: 0.75, ease: 'circ.inOut'
+            }, 0)
+            .fromTo(navbarOverlayList && gsap.utils.selector(navbarOverlayList)("li"),
+            { opacity: 0, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
+            { opacity: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power4.inOut', stagger: 0.075
             }, 0);
         
         if(!isShowingNavbarOverlay) {
             timeline.play();
         } else {
-            timeline.reverse(0);
+            timeline.timeScale(2).reverse(0);
         }
 
         setIsShowingNavbarOverlay(prev => !prev);
@@ -89,8 +94,10 @@ export default function Navbar() {
                      ref={navbarOverlayBgRef}></div>
                 <ul className="flex flex-col gap-6 container font-semibold text-4xl"
                     ref={navbarOverlayListRef}>
-                    <li><a href={CONTACT_URL} target="_blank">Contact</a></li>
-                    <li><Link href="/legal">Imprint</Link></li>
+                    <NavbarListItem value="Home" href="/"/>
+                    <NavbarListItem value="Blog" href="/blog"/>
+                    <NavbarListItem value="Contact" href={CONTACT_URL} target="_blank"/>
+                    <NavbarListItem value="Imprint" href="/legal"/>
                 </ul>
             </div>
         </>
