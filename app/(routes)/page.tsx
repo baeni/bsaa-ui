@@ -23,7 +23,7 @@ export default function Home() {
             </section>
 
             {/* Blog Preview */}
-            <section className="mt-[25vh] py-20">
+            <section className="mt-[25vh] pt-20">
                 <div id="blog" className="scroll-mt-10 flex flex-col gap-10">
                     <Link className="text-neutral-400 font-medium" href="/blog">Blog</Link>
                     <PostList onLoaded={handlePostListLoaded} />
@@ -32,7 +32,7 @@ export default function Home() {
             
             {/* Contact */}
             {isPostListLoaded && (
-                <section className="pb-20">
+                <section className="py-20">
                     <Contact />
                 </section>
             )}
