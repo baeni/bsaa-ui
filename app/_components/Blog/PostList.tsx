@@ -3,7 +3,6 @@
 import React, {useEffect} from "react";
 import usePosts, {SortOrder} from "@/app/_hooks/UsePosts";
 import {Post} from "@/application/models/Post";
-import Link from "next/link";
 import PostCard from "@/app/_components/Blog/PostCard";
 
 export default function PostsList(props: Props) {
