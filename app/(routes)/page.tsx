@@ -6,6 +6,7 @@ import React, {useState} from "react";
 import PostList from "@/app/_components/Blog/PostList";
 import Link from "next/link";
 import Contact from "@/app/_components/Contact";
+import AppList from "@/app/_components/Apps/AppList";
 
 export default function Home() {
     const [isPostListLoaded, setIsPostListLoaded] = useState(false);
@@ -21,9 +22,17 @@ export default function Home() {
                 <HeroImage />
                 <HeroSlogan />
             </section>
+            
+            {/* Apps Showcase*/}
+            <section className="mt-[25vh] pt-20">
+                <div id="apps" className="scroll-mt-10 flex flex-col gap-10">
+                    <h1 className="text-neutral-400 font-medium">Apps</h1>
+                    <AppList />
+                </div>
+            </section>
 
             {/* Blog Preview */}
-            <section className="mt-[25vh] pt-20">
+            <section className="pt-20">
                 <div id="blog" className="scroll-mt-10 flex flex-col gap-10">
                     <Link className="text-neutral-400 font-medium" href="/blog">Blog</Link>
                     <PostList onLoaded={handlePostListLoaded} />
