@@ -26,7 +26,7 @@ export default function Home() {
             {/* Apps Showcase*/}
             <section className="mt-[25vh] pt-20">
                 <div id="apps" className="scroll-mt-20 flex flex-col gap-10">
-                    <Link className="text-neutral-400 font-medium" href="#apps">Apps</Link>
+                    <Link className="text-neutral-400 font-medium" href="/#apps">Apps</Link>
                     <AppList />
                 </div>
             </section>
@@ -34,7 +34,7 @@ export default function Home() {
             {/* Blog */}
             <section className="pt-20">
                 <div id="blog" className="scroll-mt-20 flex flex-col gap-10">
-                    <Link className="text-neutral-400 font-medium" href="#blog">Blog</Link>
+                    <Link className="text-neutral-400 font-medium" href="/#blog">Blog</Link>
                     <PostList onLoaded={handlePostListLoaded} />
                 </div>
             </section>
