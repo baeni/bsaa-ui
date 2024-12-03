@@ -2,7 +2,7 @@
 
 import React from "react";
 import {App, AppStatus} from "@/application/models/App";
-import AppCard from "@/app/_components/Apps/AppCard";
+import AppCard from "@/app/_components/App/AppCard";
 import grabsImage from "@/app/_assets/images/apps/grabs/grabs-en.png"
 
 export default function AppList() {

@@ -6,7 +6,7 @@ import React, {useState} from "react";
 import PostList from "@/app/_components/Blog/PostList";
 import Link from "next/link";
 import Contact from "@/app/_components/Contact";
-import AppList from "@/app/_components/Apps/AppList";
+import AppList from "@/app/_components/App/AppList";
 
 export default function Home() {
     const [isPostListLoaded, setIsPostListLoaded] = useState(false);
