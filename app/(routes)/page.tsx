@@ -34,7 +34,7 @@ export default function Home() {
             {/* Blog Preview */}
             <section className="pt-20">
                 <div id="blog" className="scroll-mt-10 flex flex-col gap-10">
-                    <Link className="text-neutral-400 font-medium" href="/blog">Blog</Link>
+                    <Link className="text-neutral-400 font-medium" href="#blog">Blog</Link>
                     <PostList onLoaded={handlePostListLoaded} />
                 </div>
             </section>

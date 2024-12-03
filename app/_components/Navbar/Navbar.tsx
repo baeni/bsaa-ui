@@ -110,7 +110,7 @@ export default function Navbar() {
                 <ul className="flex flex-col gap-6 container font-semibold text-4xl"
                     ref={navbarOverlayListRef}>
                     <NavbarListItem value="Home" href="/"/>
-                    <NavbarListItem value="Blog" href="/blog"/>
+                    <NavbarListItem value="Blog" href="#blog"/>
                     <NavbarListItem value="Contact" href={CONTACT_URL} target="_blank"/>
                     <NavbarListItem value="Imprint" href="/legal"/>
                 </ul>
