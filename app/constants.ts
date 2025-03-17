@@ -3,7 +3,7 @@
 export const PAGE_TITLE = "bsaa"
 export const NICKNAME = "Benny"
 export const API_BASE_URL = "https://cms.imgrio.com"
-export const CONTACT_URL = "https://t0htfd31vkx.typeform.com/to/R5MK3kJw"
+export const CONTACT_URL = "mailto:baeni.saa@gmail.com?subject=Hello%20Benny"
 
 // imprint
 export const FULL_NAME = "Benjamin Saalfeld"
