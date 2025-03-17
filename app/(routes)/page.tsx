@@ -18,13 +18,13 @@ export default function Home() {
     return (
         <div className="min-h-screen">
             {/* Hero */}
-            <section className="h-screen flex items-center">
+            <section className="h-screen flex items-center mb-[25vh]">
                 <HeroImage />
                 <HeroSlogan />
             </section>
             
             {/* Apps Showcase*/}
-            {/*<section className="mt-[25vh] pt-20">*/}
+            {/*<section className="pt-20">*/}
             {/*    <div id="apps" className="scroll-mt-20 flex flex-col gap-10">*/}
             {/*        <Link className="text-neutral-400 font-medium" href="/#apps">Apps</Link>*/}
             {/*        <AppList />*/}
