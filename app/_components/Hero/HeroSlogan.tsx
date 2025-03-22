@@ -40,7 +40,7 @@ export default function HeroSlogan() {
             </h1>
             <p className="text-md md:text-xl text-neutral-400 leading-snug text-wrap">
                 Crafting beautiful code with a passion for design.<br/>
-                The Blog post below are <span className="line-through">not</span> only visually appealing.
+                The Blog posts below are <span className="line-through">not</span> only visually appealing.
             </p>
         </div>
     );
