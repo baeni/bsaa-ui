@@ -138,6 +138,7 @@ export default function Navbar() {
           ref={navbarOverlayListRef}
         >
           <NavbarListItem value="Home" href="/" />
+          <NavbarListItem value="Apps (Demo)" href="/#apps" />
           <NavbarListItem value="Blog (Demo)" href="/#blog" />
           <NavbarListItem value="Contact" href={CONTACT_URL} target="_blank" />
           <NavbarListItem value="Imprint" href="/legal" />
