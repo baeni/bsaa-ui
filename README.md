@@ -1,1 +1,1 @@
-Visit at https://bsaa-dev.vercel.app
+Visit at https://bsaa.de

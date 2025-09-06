@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import ReactLenis from "lenis/react";
-import {ReactNode} from "react";
+import ReactLenis from 'lenis/react';
+import { ReactNode } from 'react';
 
 interface SmoothScrollingProps {
   children: ReactNode;
