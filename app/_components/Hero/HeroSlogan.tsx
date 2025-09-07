@@ -52,9 +52,9 @@ export default function HeroSlogan() {
       ref={sloganRef}
       className="flex flex-col gap-2 w-full origin-left mix-blend-color-dodge"
     >
-      <h1 className="text-4xl md:text-5xl text-neutral-400 font-bold leading-none">
+      <h1 className="text-3xl md:text-5xl text-neutral-400 font-bold leading-none">
         Hello. I am{' '}
-        <span className="ml-2 text-6xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
+        <span className="ml-2 text-5xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
           {Constants.NICKNAME}.
         </span>
       </h1>
