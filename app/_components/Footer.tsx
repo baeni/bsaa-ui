@@ -15,7 +15,7 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <Link href="/legal">Imprint</Link>
+            <Link href="/legal-notice">Legal Notice</Link>
           </li>
         </ul>
 

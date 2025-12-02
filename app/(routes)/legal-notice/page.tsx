@@ -1,11 +1,11 @@
 import * as Constants from '@/app/constants';
 
-export default function Legal() {
+export default function LegalNotice() {
   return (
     <section className="mt-40 flex flex-col gap-10">
       <div>
         <h1 className="text-xl text-neutral-400 font-medium pb-4">
-          Impressum gem. § 5 DDG
+          Legal notice pursuant to § 5 DDG
         </h1>
         <p>
           {Constants.FULL_NAME}
@@ -17,9 +17,9 @@ export default function Legal() {
       </div>
 
       <div>
-        <h2 className="text-neutral-400 font-medium pb-4">Kontakt</h2>
+        <h2 className="text-neutral-400 font-medium pb-4">Contact</h2>
         <p>
-          Telefon: {Constants.PHONE_NUMBER}
+          Phone: {Constants.PHONE_NUMBER}
           <br />
           E-Mail:{' '}
           <a
@@ -33,9 +33,9 @@ export default function Legal() {
 
       <div>
         <h2 className="text-neutral-400 font-medium pb-4">
-          Inhaltlich Verantwortlicher gem. § 18 Abs. 2 MStV
+          Responsible for content pursuant to Section 18 (2) MStV
         </h2>
-        <p>{Constants.FULL_NAME} (siehe oben)</p>
+        <p>{Constants.FULL_NAME} (address as above)</p>
       </div>
     </section>
   );

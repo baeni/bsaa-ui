@@ -141,7 +141,7 @@ export default function Navbar() {
           <NavbarListItem value="Apps (Demo)" href="/#apps" />
           <NavbarListItem value="Blog (Demo)" href="/#blog" />
           <NavbarListItem value="Contact" href={CONTACT_URL} target="_blank" />
-          <NavbarListItem value="Imprint" href="/legal" />
+          <NavbarListItem value="Legal Notice" href="/legal-notice" />
         </ul>
       </div>
     </>
