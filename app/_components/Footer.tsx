@@ -20,7 +20,7 @@ export default function Footer() {
         </ul>
 
         <p className="text-neutral-400 text-sm text-right">
-          Copyright &copy; {dayjs().year()}. All Rights Reserved.
+          Copyright &copy; {dayjs().year()}. All rights reserved.
         </p>
       </div>
     </footer>
