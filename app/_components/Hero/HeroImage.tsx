@@ -15,40 +15,39 @@ export default function HeroImage() {
   useGSAP(() => {
     const imageWrapper = imageWrapperRef.current;
     const image = imageRef.current;
+    if (!imageWrapper || !image) return;
 
-    if (imageWrapper && image) {
-      gsap.fromTo(
-        image,
-        { scale: 1.1, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 3.75, ease: 'sine.inOut' },
-      );
+    gsap.fromTo(
+      image,
+      { scale: 1.1, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 3.75, ease: 'sine.inOut' },
+    );
 
-      ScrollTrigger.create({
-        trigger: imageWrapper,
-        start: 'top top',
-        end: '+=25%',
-        pin: true,
-        anticipatePin: 0.25,
-        onLeave: () => {
-          gsap.to(image, { padding: '0.75rem', duration: 0.5 });
-        },
-        onEnterBack: () => {
-          gsap.to(image, { padding: '0rem', duration: 0.125 });
-        },
-      });
+    ScrollTrigger.create({
+      trigger: imageWrapper,
+      start: 'top top',
+      end: '+=25%',
+      pin: true,
+      anticipatePin: 0.25,
+      onLeave: () => {
+        gsap.to(image, { padding: '0.75rem', duration: 0.5 });
+      },
+      onEnterBack: () => {
+        gsap.to(image, { padding: '0rem', duration: 0.125 });
+      },
+    });
 
-      ScrollTrigger.create({
-        trigger: image,
-        start: '+=25%',
-        onUpdate: (self) => {
-          gsap.to(image, {
-            filter: `brightness(${0.75 + self.progress}) grayscale(${
-              1.5 * self.progress
-            })`,
-          });
-        },
-      });
-    }
+    ScrollTrigger.create({
+      trigger: image,
+      start: '+=25%',
+      onUpdate: (self) => {
+        gsap.to(image, {
+          filter: `brightness(${0.75 + self.progress}) grayscale(${
+            1.5 * self.progress
+          })`,
+        });
+      },
+    });
   });
 
   return (

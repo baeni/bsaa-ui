@@ -14,28 +14,27 @@ export default function AppCard(props: Props) {
 
   useGSAP(() => {
     const card = cardRef.current;
+    if (!card) return;
 
-    if (card) {
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          scale: 0.95,
-          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
+    gsap.fromTo(
+      card,
+      {
+        opacity: 0,
+        scale: 0.95,
+        filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top bottom-=25%',
+          toggleActions: 'play none none reverse',
         },
-        {
-          opacity: 1,
-          scale: 1,
-          filter: 'blur(0px)',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top bottom-=25%',
-            toggleActions: 'play none none reverse',
-          },
-          ease: 'circ.inOut',
-        },
-      );
-    }
+        ease: 'circ.inOut',
+      },
+    );
   });
 
   return (

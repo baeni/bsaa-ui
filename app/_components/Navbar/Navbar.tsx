@@ -17,6 +17,7 @@ export default function Navbar() {
 
   useGSAP(() => {
     const navbar = navbarRef.current;
+    if (!navbar) return;
 
     gsap.fromTo(
       navbar,

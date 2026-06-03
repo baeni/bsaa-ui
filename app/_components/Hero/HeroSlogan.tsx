@@ -12,39 +12,38 @@ export default function HeroSlogan() {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     const slogan = sloganRef.current;
+    if (!slogan) return;
 
-    if (slogan) {
-      gsap.fromTo(
-        slogan,
-        {
-          opacity: 0,
-          scale: 0.95,
-          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
-          rotate: 3,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          filter: 'blur(0px)',
-          rotate: 0,
-          delay: 0.5,
-          duration: 1.5,
-          ease: 'sine.inOut',
-        },
-      );
+    gsap.fromTo(
+      slogan,
+      {
+        opacity: 0,
+        scale: 0.95,
+        filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
+        rotate: 3,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        rotate: 0,
+        delay: 0.5,
+        duration: 1.5,
+        ease: 'sine.inOut',
+      },
+    );
 
-      ScrollTrigger.create({
-        trigger: slogan,
-        start: 'center+=0.51 center',
-        onUpdate: (self) => {
-          gsap.to(slogan, {
-            opacity: 1 - self.progress,
-            filter: `blur(${10 * self.progress}px)`,
-            rotate: -3 * self.progress,
-          });
-        },
-      });
-    }
+    ScrollTrigger.create({
+      trigger: slogan,
+      start: 'center+=0.51 center',
+      onUpdate: (self) => {
+        gsap.to(slogan, {
+          opacity: 1 - self.progress,
+          filter: `blur(${10 * self.progress}px)`,
+          rotate: -3 * self.progress,
+        });
+      },
+    });
   });
 
   return (
