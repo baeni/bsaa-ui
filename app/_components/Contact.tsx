@@ -39,7 +39,7 @@ export default function Contact() {
       ref={contactRef}
     >
       <p className="block md:hidden text-xs md:text-sm font-medium">
-        Wanna grow together?
+        Wanna build together?
       </p>
       <p className="hidden md:block text-sm font-medium">
         Wanna build something great together?

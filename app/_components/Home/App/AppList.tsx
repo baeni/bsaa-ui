@@ -9,7 +9,7 @@ export default function AppList() {
   const apps: App[] = [
     {
       id: 'grabs',
-      status: AppStatus.COMING_SOON,
+      status: AppStatus.POSTPONED,
       title: 'Grabs',
       description:
         'Organize your grocery lists the smart way – by stores, so you never miss a grab again.',
