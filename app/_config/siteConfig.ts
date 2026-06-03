@@ -4,6 +4,9 @@
 export const siteConfig = {
   // general
   pageTitle: 'bsaa',
+  pageTitleLong: 'bsaa — Fullstack developer',
+  pageDescription:
+    'Fullstack developer crafting code – with a passion for design.',
   apiBaseUrl: 'https://cms.bsaa.dev',
   nickname: 'Benny',
   contactUrl: 'mailto:hello@bsaa.dev?subject=Hello%20Benny',

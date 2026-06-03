@@ -99,7 +99,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed left-0 top-0 w-full mt-8 z-50" ref={navbarRef}>
+      <nav
+        className="fixed left-0 top-0 w-full mt-8 z-50 text-white mix-blend-difference will-change-transform"
+        ref={navbarRef}
+      >
         <div className="flex justify-between container">
           <Link className="font-bold text-3xl -tracking-[5px]" href="/">
             {siteConfig.pageTitle}
@@ -107,7 +110,7 @@ export default function Navbar() {
 
           <button onClick={toggleNavOverlay}>
             <svg
-              className="stroke-neutral-400 size-6 sm:size-5"
+              className="fill-current size-6 sm:size-5"
               ref={navbarOverlayBtnSvgRef}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"

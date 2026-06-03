@@ -4,12 +4,13 @@ import '@/app/_assets/globals.css';
 import SmoothScrolling from '@/app/_components/SmoothScrolling';
 import Navbar from '@/app/_components/Navbar/Navbar';
 import Footer from '@/app/_components/Footer';
+import { siteConfig } from './_config/siteConfig';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'bsaa — Fullstack developer',
-  description: 'Fullstack developer crafting code – with a passion for design.',
+  title: siteConfig.pageTitleLong,
+  description: siteConfig.pageDescription,
 };
 
 export default function RootLayout({
