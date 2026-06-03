@@ -19,9 +19,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section
-        className={`h-screen flex items-center ${env.showAppsSection || env.showBlogSection ? 'mb-[25vh]' : ''}`}
-      >
+      <section className="h-screen flex items-center mb-[25vh]">
         <HeroImage />
         <HeroSlogan />
       </section>
