@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.wp-formatting * {
-  margin-top: 2rem;
-}
-
 @font-face {
   font-family: 'Amettasignature';
   src: url('../_assets/fonts/Amettasignature.ttf') format('truetype');

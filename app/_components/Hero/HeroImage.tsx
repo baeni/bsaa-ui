@@ -30,18 +30,20 @@ export default function HeroImage() {
       pin: true,
       anticipatePin: 0.25,
       onLeave: () => {
-        gsap.to(image, { padding: '0.75rem', duration: 0.5 });
+        gsap.to(image, { padding: '0.75rem', duration: 0.5, overwrite: true });
       },
       onEnterBack: () => {
-        gsap.to(image, { padding: '0rem', duration: 0.125 });
+        gsap.to(image, { padding: '0rem', duration: 0.125, overwrite: true });
       },
     });
 
     ScrollTrigger.create({
-      trigger: image,
-      start: '+=25%',
+      trigger: imageWrapper,
+      start: 'top top',
+      end: '+=25%',
+      scrub: true,
       onUpdate: (self) => {
-        gsap.to(image, {
+        gsap.set(image, {
           filter: `brightness(${0.75 + self.progress}) grayscale(${
             1.5 * self.progress
           })`,
