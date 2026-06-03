@@ -3,8 +3,8 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import * as Constants from '@/app/constants';
 import { useRef } from 'react';
+import { siteConfig } from '@/app/_config/siteConfig';
 
 export default function HeroSlogan() {
   const sloganRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function HeroSlogan() {
         {
           opacity: 0,
           scale: 0.95,
-          filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`,
+          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
           rotate: 3,
         },
         {
@@ -30,7 +30,7 @@ export default function HeroSlogan() {
           delay: 0.5,
           duration: 1.5,
           ease: 'sine.inOut',
-        }
+        },
       );
 
       ScrollTrigger.create({
@@ -55,7 +55,7 @@ export default function HeroSlogan() {
       <h1 className="text-3xl md:text-5xl text-neutral-400 font-bold leading-none">
         Hello. I am{' '}
         <span className="ml-2 text-5xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
-          {Constants.NICKNAME}.
+          {siteConfig.nickname}.
         </span>
       </h1>
       <p className="text-md md:text-xl text-neutral-300 leading-snug text-wrap">

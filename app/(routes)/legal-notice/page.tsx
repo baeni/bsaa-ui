@@ -1,4 +1,4 @@
-import * as Constants from '@/app/constants';
+import { siteConfig } from '@/app/_config/siteConfig';
 
 export default function LegalNotice() {
   return (
@@ -8,25 +8,25 @@ export default function LegalNotice() {
           Legal notice pursuant to § 5 DDG
         </h1>
         <p>
-          {Constants.FULL_NAME}
+          {siteConfig.legal.fullName}
           <br />
-          {Constants.ADDRESS}
+          {siteConfig.legal.address}
           <br />
-          {Constants.CITY}
+          {siteConfig.legal.city}
         </p>
       </div>
 
       <div>
         <h2 className="text-neutral-400 font-medium pb-4">Contact</h2>
         <p>
-          Phone: {Constants.PHONE_NUMBER}
+          Phone: {siteConfig.legal.phone}
           <br />
           E-Mail:{' '}
           <a
             className="underline decoration-dotted"
-            href={`mailto:${Constants.EMAIL_ADDRESS}`}
+            href={`mailto:${siteConfig.legal.email}`}
           >
-            {Constants.EMAIL_ADDRESS}
+            {siteConfig.legal.email}
           </a>
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function LegalNotice() {
         <h2 className="text-neutral-400 font-medium pb-4">
           Responsible for content pursuant to Section 18 (2) MStV
         </h2>
-        <p>{Constants.FULL_NAME} (address as above)</p>
+        <p>{siteConfig.legal.fullName} (address as above)</p>
       </div>
     </section>
   );

@@ -3,10 +3,9 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
-import * as Constants from '@/app/constants';
 import { useRef, useState } from 'react';
-import { CONTACT_URL } from '@/app/constants';
 import NavbarListItem from '@/app/_components/Navbar/NavbarListItem';
+import { siteConfig } from '@/app/_config/siteConfig';
 
 export default function Navbar() {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -21,7 +20,7 @@ export default function Navbar() {
     gsap.fromTo(
       navbar,
       { opacity: '0', y: '-25' },
-      { opacity: '1', y: '0', delay: 1, duration: 3, ease: 'power4.inOut' }
+      { opacity: '1', y: '0', delay: 1, duration: 3, ease: 'power4.inOut' },
     );
   });
 
@@ -46,13 +45,13 @@ export default function Navbar() {
         navbarOverlayBtnSvgLines![0] ?? null,
         { translateY: 0 },
         { translateY: -64, duration: 1, ease: 'circ.inOut' },
-        0
+        0,
       )
       .fromTo(
         navbarOverlayBtnSvgLines![1] ?? null,
         { translateY: 0 },
         { translateY: 64, duration: 1, ease: 'circ.inOut' },
-        0
+        0,
       )
       .fromTo(
         navbarOverlay,
@@ -63,17 +62,20 @@ export default function Navbar() {
           duration: 0.75,
           ease: 'circ.inOut',
         },
-        0
+        0,
       )
       .fromTo(
         navbarOverlayBg,
         { scaleY: 0 },
         { scaleY: 1, duration: 0.75, ease: 'circ.inOut' },
-        0
+        0,
       )
       .fromTo(
         navbarOverlayList && gsap.utils.selector(navbarOverlayList)('li'),
-        { opacity: 0, filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)` },
+        {
+          opacity: 0,
+          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
+        },
         {
           opacity: 1,
           filter: 'blur(0px)',
@@ -81,7 +83,7 @@ export default function Navbar() {
           ease: 'power4.inOut',
           stagger: 0.075,
         },
-        0
+        0,
       );
 
     if (!isShowingNavbarOverlay) {
@@ -98,7 +100,7 @@ export default function Navbar() {
       <nav className="fixed left-0 top-0 w-full mt-8 z-50" ref={navbarRef}>
         <div className="flex justify-between container">
           <Link className="font-bold text-3xl -tracking-[5px]" href="/">
-            {Constants.PAGE_TITLE}
+            {siteConfig.pageTitle}
           </Link>
 
           <button onClick={toggleNavOverlay}>
@@ -140,7 +142,11 @@ export default function Navbar() {
           <NavbarListItem value="Home" href="/" />
           <NavbarListItem value="Apps (Demo)" href="/#apps" />
           <NavbarListItem value="Blog (Demo)" href="/#blog" />
-          <NavbarListItem value="Contact" href={CONTACT_URL} target="_blank" />
+          <NavbarListItem
+            value="Contact"
+            href={siteConfig.contactUrl}
+            target="_blank"
+          />
           <NavbarListItem value="Legal Notice" href="/legal-notice" />
         </ul>
       </div>

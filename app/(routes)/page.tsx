@@ -7,6 +7,7 @@ import PostList from '@/app/_components/Blog/PostList';
 import Link from 'next/link';
 import Contact from '@/app/_components/Contact';
 import AppList from '@/app/_components/App/AppList';
+import { env } from '../_config/env';
 
 export default function Home() {
   const [isPostListLoaded, setIsPostListLoaded] = useState(false);
@@ -18,30 +19,36 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="h-screen flex items-center mb-[25vh]">
+      <section
+        className={`h-screen flex items-center ${env.showAppsSection || env.showBlogSection ? 'mb-[25vh]' : ''}`}
+      >
         <HeroImage />
         <HeroSlogan />
       </section>
 
       {/* Apps Showcase*/}
-      <section className="pt-20">
-        <div id="apps" className="scroll-mt-20 flex flex-col gap-10">
-          <Link className="text-neutral-400 font-medium" href="/#apps">
-            Apps
-          </Link>
-          <AppList />
-        </div>
-      </section>
+      {env.showAppsSection && (
+        <section className="pt-20">
+          <div id="apps" className="scroll-mt-20 flex flex-col gap-10">
+            <Link className="text-neutral-400 font-medium" href="/#apps">
+              Apps
+            </Link>
+            <AppList />
+          </div>
+        </section>
+      )}
 
       {/* Blog */}
-      <section className="pt-20">
-        <div id="blog" className="scroll-mt-20 flex flex-col gap-10">
-          <Link className="text-neutral-400 font-medium" href="/#blog">
-            Blog
-          </Link>
-          <PostList onLoaded={handlePostListLoaded} />
-        </div>
-      </section>
+      {env.showBlogSection && (
+        <section className="pt-20">
+          <div id="blog" className="scroll-mt-20 flex flex-col gap-10">
+            <Link className="text-neutral-400 font-medium" href="/#blog">
+              Blog
+            </Link>
+            <PostList onLoaded={handlePostListLoaded} />
+          </div>
+        </section>
+      )}
 
       {/* Contact */}
       {isPostListLoaded && (

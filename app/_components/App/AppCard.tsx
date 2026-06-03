@@ -5,7 +5,7 @@ import { App, AppStatus } from '@/application/models/App';
 import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import * as Constants from '@/app/constants';
+import { siteConfig } from '@/app/_config/siteConfig';
 
 export default function AppCard(props: Props) {
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -20,7 +20,7 @@ export default function AppCard(props: Props) {
         {
           opacity: 0,
           scale: 0.95,
-          filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`,
+          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
         },
         {
           opacity: 1,
@@ -32,7 +32,7 @@ export default function AppCard(props: Props) {
             toggleActions: 'play none none reverse',
           },
           ease: 'circ.inOut',
-        }
+        },
       );
     }
   });

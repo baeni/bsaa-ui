@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import * as Constants from '@/app/constants';
+import { siteConfig } from '../_config/siteConfig';
 
 export default function Contact() {
   const contactWrapperRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function Contact() {
         {
           opacity: 0,
           scale: 0.95,
-          filter: `blur(${Constants.FADE_BLUR_INIT_VAL}px)`,
+          filter: `blur(${siteConfig.fadeBlurInitVal}px)`,
         },
         {
           opacity: 1,
@@ -31,7 +31,7 @@ export default function Contact() {
             toggleActions: 'play none none reverse',
           },
           ease: 'circ.inOut',
-        }
+        },
       );
     }
   });
@@ -51,7 +51,7 @@ export default function Contact() {
 
         <a
           className="px-4 py-2 bg-neutral-400 bg-opacity-25 hover:bg-opacity-40 transition-all duration-300 backdrop-blur rounded-full text-xs md:text-sm font-medium text-nowrap"
-          href={Constants.CONTACT_URL}
+          href={siteConfig.contactUrl}
           target="_blank"
         >
           Let&apos;s connect!

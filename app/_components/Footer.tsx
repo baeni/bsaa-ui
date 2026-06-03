@@ -2,7 +2,7 @@
 
 import dayjs from 'dayjs';
 import Link from 'next/link';
-import { CONTACT_URL } from '@/app/constants';
+import { siteConfig } from '@/app/_config/siteConfig';
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="text-sm py-10 grid md:grid-cols-2 justify-between">
         <ul className="inline-flex gap-4 text-neutral-400 font-medium underline decoration-dotted">
           <li>
-            <a href={CONTACT_URL} target="_blank">
+            <a href={siteConfig.contactUrl} target="_blank">
               Contact
             </a>
           </li>
