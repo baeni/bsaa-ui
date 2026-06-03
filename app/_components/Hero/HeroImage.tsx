@@ -17,10 +17,18 @@ export default function HeroImage() {
     const image = imageRef.current;
     if (!imageWrapper || !image) return;
 
+    gsap.set(image, { padding: '0rem' });
+
     gsap.fromTo(
-      image,
+      imageWrapper,
       { scale: 1.1, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 3.75, ease: 'sine.inOut' },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 3.75,
+        ease: 'sine.inOut',
+        overwrite: 'auto',
+      },
     );
 
     ScrollTrigger.create({
