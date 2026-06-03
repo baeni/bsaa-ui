@@ -5,6 +5,7 @@ import usePostBySlug from '@/app/_hooks/UsePostBySlug';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Post({ params }: { params: { slug: string } }) {
   dayjs.extend(relativeTime);
@@ -37,7 +38,7 @@ export default function Post({ params }: { params: { slug: string } }) {
           title={
             post.user_updated && post.date_updated
               ? `Last updated by ${post.user_updated.first_name} ${dayjs().to(
-                  post.date_updated
+                  post.date_updated,
                 )}`
               : undefined
           }
@@ -49,11 +50,11 @@ export default function Post({ params }: { params: { slug: string } }) {
         <h2 className="text-4xl font-semibold">{post.title}</h2>
 
         {post.featured_image && (
-          <img
+          <Image
             className="my-8"
             src={`https://cms.bsaa.dev/assets/${post.featured_image}`}
             alt="Featured Image"
-          ></img>
+          />
         )}
 
         <div

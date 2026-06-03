@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { siteConfig } from '@/app/_config/siteConfig';
+import Image from 'next/image';
 
 export default function AppCard(props: Props) {
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -73,7 +74,7 @@ export default function AppCard(props: Props) {
           </p>
         </div>
         {props.app.featured_image && (
-          <img
+          <Image
             className="aspect-[1/1.5] object-cover object-top
                                     transition-transform duration-300
                                     group-hover:scale-125 group-hover:-translate-y-10"

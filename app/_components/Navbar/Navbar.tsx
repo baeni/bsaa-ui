@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 import NavbarListItem from '@/app/_components/Navbar/NavbarListItem';
 import { siteConfig } from '@/app/_config/siteConfig';
+import { env } from '@/app/_config/env';
 
 export default function Navbar() {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -140,8 +141,12 @@ export default function Navbar() {
           ref={navbarOverlayListRef}
         >
           <NavbarListItem value="Home" href="/" />
-          <NavbarListItem value="Apps (Demo)" href="/#apps" />
-          <NavbarListItem value="Blog (Demo)" href="/#blog" />
+          {env.showAppsSection && (
+            <NavbarListItem value="Apps (Demo)" href="/#apps" />
+          )}
+          {env.showBlogSection && (
+            <NavbarListItem value="Blog (Demo)" href="/#blog" />
+          )}
           <NavbarListItem
             value="Contact"
             href={siteConfig.contactUrl}

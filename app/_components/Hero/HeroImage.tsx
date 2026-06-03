@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BackgroundImage from '@/public/bg.jpg';
+import Image from 'next/image';
 
 export default function HeroImage() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ export default function HeroImage() {
       gsap.fromTo(
         image,
         { scale: 1.1, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 3.75, ease: 'sine.inOut' }
+        { scale: 1, opacity: 1, duration: 3.75, ease: 'sine.inOut' },
       );
 
       ScrollTrigger.create({
@@ -55,7 +56,7 @@ export default function HeroImage() {
       ref={imageWrapperRef}
       className="w-screen h-screen absolute inset-0 -z-10"
     >
-      <img
+      <Image
         ref={imageRef}
         className="w-full h-full object-cover pointer-events-none select-none brightness-75"
         src={BackgroundImage.src}

@@ -1,21 +1,9 @@
-'use client';
-
 import HeroImage from '../_components/Hero/HeroImage';
 import HeroSlogan from '../_components/Hero/HeroSlogan';
-import React, { useState } from 'react';
-import PostList from '@/app/_components/Blog/PostList';
-import Link from 'next/link';
-import Contact from '@/app/_components/Contact';
-import AppList from '@/app/_components/App/AppList';
+import HomeClientSections from '../_components/Home/HomeClientSection';
 import { env } from '../_config/env';
 
 export default function Home() {
-  const [isPostListLoaded, setIsPostListLoaded] = useState(false);
-
-  const handlePostListLoaded = () => {
-    setIsPostListLoaded(true);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -24,36 +12,16 @@ export default function Home() {
         <HeroSlogan />
       </section>
 
-      {/* Apps Showcase*/}
-      {env.showAppsSection && (
-        <section className="pt-20">
-          <div id="apps" className="scroll-mt-20 flex flex-col gap-10">
-            <Link className="text-neutral-400 font-medium" href="/#apps">
-              Apps
-            </Link>
-            <AppList />
-          </div>
-        </section>
-      )}
-
-      {/* Blog */}
-      {env.showBlogSection && (
-        <section className="pt-20">
-          <div id="blog" className="scroll-mt-20 flex flex-col gap-10">
-            <Link className="text-neutral-400 font-medium" href="/#blog">
-              Blog
-            </Link>
-            <PostList onLoaded={handlePostListLoaded} />
-          </div>
-        </section>
-      )}
-
-      {/* Contact */}
-      {isPostListLoaded && (
-        <section className="py-20">
-          <Contact />
-        </section>
-      )}
+      {/**
+       * Apps Showcase, Blog and Contact
+       *
+       * This section was outsourced to make this page.tsx a server component
+       * and thus be able to access env vars.
+       */}
+      <HomeClientSections
+        showAppsSection={env.showAppsSection}
+        showBlogSection={env.showBlogSection}
+      />
     </div>
   );
 }

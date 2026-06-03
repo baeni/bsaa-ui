@@ -3,13 +3,13 @@
 import React, { useEffect } from 'react';
 import usePosts, { SortOrder } from '@/app/_hooks/UsePosts';
 import { Post } from '@/application/models/Post';
-import PostCard from '@/app/_components/Blog/PostCard';
+import PostCard from '@/app/_components/Home/Blog/PostCard';
 
 export default function PostsList(props: Props) {
   const { posts, loading } = usePosts(
     props.limit,
     'date_created',
-    SortOrder.Descending
+    SortOrder.Descending,
   );
 
   useEffect(() => {

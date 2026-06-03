@@ -7,6 +7,7 @@ import ReadingTime from 'reading-time';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { siteConfig } from '@/app/_config/siteConfig';
+import Image from 'next/image';
 
 export default function PostCard(props: Props) {
   const cardRef = useRef<HTMLAnchorElement>(null);
@@ -71,7 +72,7 @@ export default function PostCard(props: Props) {
         </div>
       </div>
       {props.post.featured_image && (
-        <img
+        <Image
           className="aspect-[16/10] object-cover"
           src={`https://cms.bsaa.dev/assets/${props.post.featured_image}?quality=20`}
           alt="Thumbnail"
