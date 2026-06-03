@@ -7,7 +7,7 @@ export interface App {
 }
 
 export enum AppStatus {
-  POSTPONED = 'Postponed',
+  DISCONTINUED = 'Discontinued',
   COMING_SOON = 'Coming Soon',
   BETA = 'Beta',
   RELEASE = 'Release',
