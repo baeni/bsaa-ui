@@ -54,6 +54,8 @@ export default function Post({ params }: { params: { slug: string } }) {
             className="my-8"
             src={`https://cms.bsaa.dev/assets/${post.featured_image}`}
             alt="Featured Image"
+            width={1920}
+            height={1200}
           />
         )}
 

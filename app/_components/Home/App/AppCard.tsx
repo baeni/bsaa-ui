@@ -51,8 +51,7 @@ export default function AppCard(props: Props) {
         <div className="flex flex-col gap-4">
           <div
             className="flex justify-between items-start
-                                    transition-transform duration-300
-                                    group-hover:translate-y-5"
+                                    transition-transform duration-300"
           >
             <h2
               className="text-xl md:text-3xl font-bold truncate"
@@ -79,6 +78,8 @@ export default function AppCard(props: Props) {
                                     group-hover:scale-125 group-hover:-translate-y-10"
             src={props.app.featured_image}
             alt="Thumbnail"
+            width={710}
+            height={1398}
           />
         )}
       </div>

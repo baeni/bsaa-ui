@@ -75,6 +75,8 @@ export default function PostCard(props: Props) {
           className="aspect-[16/10] object-cover"
           src={`https://cms.bsaa.dev/assets/${props.post.featured_image}?quality=20`}
           alt="Thumbnail"
+          width={1920}
+          height={1200}
         />
       )}
       <p className="text-sm text-neutral-600 whitespace-pre-line">

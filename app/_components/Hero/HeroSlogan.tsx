@@ -49,17 +49,17 @@ export default function HeroSlogan() {
   return (
     <div
       ref={sloganRef}
-      className="flex flex-col gap-2 w-full origin-left mix-blend-color-dodge"
+      className="flex flex-col gap-3 w-full origin-left mix-blend-color-dodge"
     >
-      <h1 className="text-3xl md:text-5xl text-neutral-400 font-bold leading-none">
-        Hello. I am{' '}
-        <span className="ml-2 text-5xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl text-neutral-400 font-bold leading-none">
+        Hello. I'm{' '}
+        <span className="ml-2 text-5xl sm:text-6xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
           {siteConfig.nickname}.
         </span>
       </h1>
-      <p className="text-md md:text-xl text-neutral-300 leading-snug text-wrap">
-        Fullstack developer crafting code
-        <br />– with a passion for design.
+      <p className="text-md md:text-2xl text-neutral-300 leading-snug text-wrap">
+        Building things with code
+        <br />– and making sure they look good, too.
       </p>
     </div>
   );

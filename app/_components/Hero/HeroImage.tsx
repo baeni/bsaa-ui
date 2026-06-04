@@ -70,6 +70,7 @@ export default function HeroImage() {
         className="w-full h-full object-cover pointer-events-none select-none brightness-75"
         src={BackgroundImage.src}
         alt="Background"
+        fill
       />
     </div>
   );
