@@ -52,7 +52,7 @@ export default function HeroSlogan() {
       className="flex flex-col gap-3 w-full origin-left mix-blend-color-dodge"
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl text-neutral-400 font-bold leading-none">
-        Hello. I'm{' '}
+        Hello. I&apos;m{' '}
         <span className="ml-2 text-5xl sm:text-6xl md:text-7xl text-neutral-400 font-bold leading-none font-[Amettasignature]">
           {siteConfig.nickname}.
         </span>
